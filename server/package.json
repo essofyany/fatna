@@ -1,0 +1,23 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "SET NODE_ENV=DEVELOPMENT& nodemon app.js",
+    "prod": "SET NODE_ENV=PRODUCTION& nodemon app.js",
+    "seeder": "node --experimental-json-modules utils/seeder.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.12",
+    "nodemon": "^2.0.7"
+  }
+}

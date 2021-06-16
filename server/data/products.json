@@ -1,0 +1,48 @@
+[
+  {
+    "name": "ezzzy",
+    "description": "grey ezzzy form italy",
+    "price": 21,
+    "seller": "bilal",
+    "category": "men",
+    "ratings": "32",
+    "images": [
+      {
+        "public_id": "1",
+        "url": "https://res.cloudinary.com/dumlhqdtb/image/upload/v1616329021/sickfits/60573937da91b52218603a18.webp"
+      }
+    ],
+    "stock": 231,
+    "numberOfReviews": 21,
+    "reviews": [
+      {
+        "name": "imane",
+        "rating": 5,
+        "comment": "prefect ezzzy"
+      }
+    ]
+  },
+  {
+    "name": "zoom",
+    "description": "grey zoom form france",
+    "price": 21,
+    "seller": "imane",
+    "category": "women",
+    "ratings": "21",
+    "images": [
+      {
+        "public_id": "2",
+        "url": "https://res.cloudinary.com/dumlhqdtb/image/upload/v1616329021/sickfits/60573937da91b52218603a18.webp"
+      }
+    ],
+    "stock": 21,
+    "numberOfReviews": 21,
+    "reviews": [
+      {
+        "name": "bilal",
+        "rating": 4,
+        "comment": "nice zoom"
+      }
+    ]
+  }
+]
