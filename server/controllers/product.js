@@ -1,15 +1,27 @@
 import Product from "../models/product.js";
 import ErrorHandler from "../utils/errorHandler.js";
 import catchAsyncErrors from "../middlewares/catchAsyncErrors.js";
+import APIFeatures from "../utils/apiFeatures.js";
 
 export const getProducts = catchAsyncErrors(async (req, res, next) => {
   if (!req.method === "GET") {
     return next(new ErrorHandler("check your http method", 409));
   }
-  const products = await Product.find();
+
+  const resPerPage = 1;
+
+  const productCount = await Product.countDocuments();
+
+  const apiFeatures = new APIFeatures(Product.find(), req.query)
+    .search()
+    .filter()
+    .pagination(resPerPage);
+
+  const products = await apiFeatures.query;
   res.status(200).json({
     success: true,
     message: "successfully retrieving products",
+    productCount,
     count: products.length,
     products,
   });
