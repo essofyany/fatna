@@ -1,5 +1,5 @@
 import express from "express";
-import { isAuthenticatedUser } from "../middlewares/auth.js";
+import { isAuthenticatedUser, authorizeRoles } from "../middlewares/auth.js";
 import {
   getProducts,
   getSingleProduct,
@@ -13,8 +13,13 @@ const router = express.Router();
 router.get("/", getProducts);
 router.get("/:id", getSingleProduct);
 
-router.post("/", isAuthenticatedUser, createProduct);
-router.put("/:id", isAuthenticatedUser, updateProduct);
-router.delete("/:id", isAuthenticatedUser, deleteProduct);
+router.post("/", isAuthenticatedUser, authorizeRoles("admin"), createProduct);
+router.put("/:id", isAuthenticatedUser, authorizeRoles("admin"), updateProduct);
+router.delete(
+  "/:id",
+  isAuthenticatedUser,
+  authorizeRoles("admin"),
+  deleteProduct
+);
 
 export default router;

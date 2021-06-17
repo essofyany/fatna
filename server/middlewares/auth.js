@@ -3,6 +3,7 @@ import jwt from "jsonwebtoken";
 import ErrorHandler from "../utils/errorHandler.js";
 import User from "../models/user.js";
 
+// check if user authenticated
 export const isAuthenticatedUser = catchAsyncErrors(async (req, res, next) => {
   const { token } = req.cookies;
 
@@ -12,7 +13,22 @@ export const isAuthenticatedUser = catchAsyncErrors(async (req, res, next) => {
     );
 
   const decode = jwt.verify(token, process.env.JWT_SECRET);
-  req.user = User.findById(decode.id);
+  req.user = await User.findById(decode.id);
 
   next();
 });
+
+// Handling user roles
+export const authorizeRoles = (...roles) => {
+  return (req, res, next) => {
+    if (!roles.includes(req.user.role)) {
+      return next(
+        new ErrorHandler(
+          `Role (${req.user.role} is not allowed to access this resource)`,
+          403
+        )
+      );
+    }
+    next();
+  };
+};
