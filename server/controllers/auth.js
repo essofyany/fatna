@@ -2,6 +2,7 @@ import User from "../models/user.js";
 import ErrorHandler from "../utils/errorHandler.js";
 import encryptor from "../utils/encryptor.js";
 import catchAsyncErrors from "../middlewares/catchAsyncErrors.js";
+import { sendToken } from "../utils/jwtToken.js";
 
 export const registerUser = catchAsyncErrors(async (req, res, next) => {
   const { name, email, password } = req.body;
@@ -18,12 +19,8 @@ export const registerUser = catchAsyncErrors(async (req, res, next) => {
     },
   });
 
-  const token = user.getJwtToken();
-
-  res.status(201).json({
-    success: true,
-    token,
-  });
+  //   set cookie
+  sendToken(user, 200, res);
 });
 
 export const loginUser = catchAsyncErrors(async (req, res, next) => {
@@ -48,10 +45,6 @@ export const loginUser = catchAsyncErrors(async (req, res, next) => {
     return next(new ErrorHandler("Invalid password. Please try again", 401));
   }
 
-  const token = user.getJwtToken();
-
-  res.status(200).json({
-    success: true,
-    token,
-  });
+  //   set cookie
+  sendToken(user, 200, res);
 });
