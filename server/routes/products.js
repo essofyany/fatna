@@ -1,5 +1,5 @@
 import express from "express";
-
+import { isAuthenticatedUser } from "../middlewares/auth.js";
 import {
   getProducts,
   getSingleProduct,
@@ -10,7 +10,7 @@ import {
 
 const router = express.Router();
 
-router.get("/", getProducts);
+router.get("/", isAuthenticatedUser, getProducts);
 router.get("/:id", getSingleProduct);
 router.post("/", createProduct);
 router.put("/:id", updateProduct);

@@ -7,13 +7,14 @@ import dotenv from "dotenv";
 import productRoutes from "./routes/products.js";
 import authRoutes from "./routes/auth.js";
 import errorMiddleware from "./middlewares/error.js";
-
+import cookieParser from "cookie-parser";
 dotenv.config({ path: "config/config.env" });
 const app = express();
 
 app.use(bodyParser.urlencoded());
 app.use(bodyParser.json());
 app.use(cors());
+app.use(cookieParser());
 
 app.use("/api/product", productRoutes);
 app.use("/api/auth", authRoutes);
