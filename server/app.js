@@ -5,6 +5,7 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import productRoutes from "./routes/products.js";
+import authRoutes from "./routes/auth.js";
 import errorMiddleware from "./middlewares/error.js";
 
 dotenv.config({ path: "config/config.env" });
@@ -15,6 +16,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.use("/api/product", productRoutes);
+app.use("/api/auth", authRoutes);
 
 app.use(errorMiddleware);
 
