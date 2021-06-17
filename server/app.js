@@ -5,6 +5,7 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import productRoutes from "./routes/products.js";
+import userRoutes from "./routes/user.js";
 import authRoutes from "./routes/auth.js";
 import errorMiddleware from "./middlewares/error.js";
 import cookieParser from "cookie-parser";
@@ -18,6 +19,7 @@ app.use(cookieParser());
 
 app.use("/api/product", productRoutes);
 app.use("/api/auth", authRoutes);
+app.use("/api/user", userRoutes);
 
 app.use(errorMiddleware);
 

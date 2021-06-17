@@ -1,8 +1,8 @@
 import crypto from "crypto";
 import User from "../models/user.js";
 import ErrorHandler from "../utils/errorHandler.js";
-import encryptor from "../utils/encryptor.js";
 import catchAsyncErrors from "../middlewares/catchAsyncErrors.js";
+import encryptor from "../utils/encryptor.js";
 import { sendToken } from "../utils/jwtToken.js";
 import sendEmail from "../utils/sendEmail.js";
 
@@ -21,7 +21,7 @@ export const registerUser = catchAsyncErrors(async (req, res, next) => {
     },
   });
 
-  //   set cookie
+  // set cookie
   sendToken(user, 200, res);
 });
 
