@@ -46,7 +46,9 @@ export const getSingleProduct = catchAsyncErrors(async (req, res, next) => {
 });
 
 export const createProduct = catchAsyncErrors(async (req, res, next) => {
+  req.body.user = req.user.id;
   const newProduct = req.body;
+
   if (!req.method === "POST" && !newProduct) {
     return next(
       new ErrorHandler("no product data was provided to be add to the DB!", 409)
