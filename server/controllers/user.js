@@ -56,3 +56,71 @@ export const getCurrentUser = catchAsyncErrors(async (req, res, next) => {
     user,
   });
 });
+
+// #### ONLY 4 ADMINS
+
+// Get all users => api/user/admin/allUsers
+export const getAlltUsers = catchAsyncErrors(async (req, res, next) => {
+  const users = await User.find();
+
+  res.status(200).json({
+    success: true,
+    users,
+  });
+});
+
+// Get specific user => api/user/admin/user/:id
+export const getUser = catchAsyncErrors(async (req, res, next) => {
+  const userId = req.params.id;
+  const user = await User.findById(userId);
+
+  if (!user)
+    return next(
+      new ErrorHandler(`No user found with this ID : ${userId}`, 404)
+    );
+
+  res.status(200).json({
+    success: true,
+    user,
+  });
+});
+
+// Update user data => api/user/admin/user/:id
+export const updateUser = catchAsyncErrors(async (req, res, next) => {
+  const userId = req.params.id;
+
+  const newProfileData = {
+    name: req.body.name,
+    email: req.body.email,
+    role: req.body.role,
+
+    // todo: avatar
+  };
+
+  const updatedProfile = await User.findByIdAndUpdate(userId, newProfileData, {
+    new: true,
+    runValidators: true,
+    useFindAndModify: false,
+  });
+
+  res.status(201).json({
+    success: true,
+  });
+});
+
+// Delete user => api/user/admin/user/:id
+export const deleteUser = catchAsyncErrors(async (req, res, next) => {
+  const user = await User.findById(req.params.id);
+
+  if (!user)
+    return next(
+      new ErrorHandler(`User not found for ID = ${req.params.id}`, 404)
+    );
+
+  //TODO : delete user images from cloudinary
+  await user.remove();
+
+  res.status(200).json({
+    success: true,
+  });
+});
