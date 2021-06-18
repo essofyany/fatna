@@ -1,2 +1,2 @@
 # fatna
-E-commerce web application built with MERN stack 
+MERN stack e-commerce web application
