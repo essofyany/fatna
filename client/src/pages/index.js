@@ -1,18 +1,17 @@
-import { Box, Text } from "@chakra-ui/layout";
+import {} from "@chakra-ui/react";
+import SlideShow from "../components/Home/SlideShow";
+import SectionTitle from "../components/Home/SectionTitle";
 import { motion } from "framer-motion";
 
-export const MotionBox = motion(Box);
 const HomePage = () => {
   return (
-    // <MotionBox
-    //   height="40px"
-    //   bg="red.300"
-    //   drag="y"
-    //   dragConstraints={{ left: -100, right: 100 }}
-    //   whileHover={{ scale: 1.1 }}
-    //   whileTap={{ scale: 0.9 }}
-    // />
-    <Text>Body</Text>
+    <>
+      <SectionTitle
+        borderLength="83%"
+        title="BEST SELLER AESTHETIC CLOTHES"
+        subTitle="Discover our unique & cute aesthetic clothes."
+      />
+    </>
   );
 };
 

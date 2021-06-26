@@ -1,13 +1,18 @@
 import { extendTheme } from "@chakra-ui/react";
 import { createBreakpoints } from "@chakra-ui/theme-tools";
 
-const fonts = { mono: `'Menlo', monospace` };
+const fonts = {
+  mono: `'Menlo', monospace`,
+  heading: "Quicksand",
+  body: "Quicksand",
+};
 
 const breakpoints = createBreakpoints({
-  sm: "40em",
-  md: "52em",
-  lg: "64em",
-  xl: "80em",
+  sm: "30em", //480px
+  md: "48em", //768px
+  lg: "62em", //992px
+  xl: "80em", //1280px
+  "2xl": "96em", //1536px
 });
 
 const theme = extendTheme({

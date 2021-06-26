@@ -6,7 +6,12 @@ function Layout({ children }) {
   return (
     <>
       <Header />
-      <Container my="10" minH="120vh" bg="green.400">
+      <Container
+        maxW={{ base: "full", md: "full", lg: "4xl", xl: "7xl" }}
+        bg="blanchedalmond"
+        my={{ base: "12", md: "12", lg: "auto" }}
+        minH="120vh"
+      >
         {children}
       </Container>
       <Footer />
