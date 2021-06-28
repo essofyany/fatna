@@ -1,7 +1,7 @@
 import { Box } from "@chakra-ui/react";
 import { BsCollection } from "react-icons/bs";
 import { HiOutlineHome } from "react-icons/hi";
-import { RiHeart3Line } from "react-icons/ri";
+import { RiHeart3Line, RiHeart2Line } from "react-icons/ri";
 import { BiUser } from "react-icons/bi";
 import { CgShoppingBag } from "react-icons/cg";
 import IconTap from "../Motions/IconTap";
@@ -9,7 +9,7 @@ import IconTap from "../Motions/IconTap";
 function Footer() {
   return (
     <Box
-      d={{base:"flex", lg:'none'}}
+      d={{ base: "flex", lg: "none" }}
       justifyContent="space-around"
       alignItems="center"
       px="1"
@@ -32,7 +32,7 @@ function Footer() {
         <CgShoppingBag size="30" />
       </IconTap>
       <IconTap>
-        <RiHeart3Line size="30" />
+        <RiHeart2Line size="30" />
       </IconTap>
       <IconTap>
         <BiUser size="30" />

@@ -1,7 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-// import counterReducer from "./features/counterSlice";
+import interactionReducer from "./features/interactionSlice";
+
 export default configureStore({
   reducer: {
-    counter: counterReducer,
+    interactions: interactionReducer,
   },
 });

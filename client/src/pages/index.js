@@ -1,16 +1,18 @@
-import {} from "@chakra-ui/react";
-import SlideShow from "../components/Home/SlideShow";
+import { Box } from "@chakra-ui/react";
 import SectionTitle from "../components/Home/SectionTitle";
-import { motion } from "framer-motion";
+import ProductCard from "../components/ProductCard/ProductCard";
 
 const HomePage = () => {
   return (
     <>
       <SectionTitle
-        borderLength="83%"
         title="BEST SELLER AESTHETIC CLOTHES"
         subTitle="Discover our unique & cute aesthetic clothes."
       />
+
+      <Box d="flex" justifyContent="center" flexWrap="wrap">
+        <ProductCard />
+      </Box>
     </>
   );
 };

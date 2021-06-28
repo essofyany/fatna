@@ -8,7 +8,7 @@ function Layout({ children }) {
       <Header />
       <Container
         maxW={{ base: "full", md: "full", lg: "4xl", xl: "7xl" }}
-        bg="blanchedalmond"
+        // bg="blanchedalmond"
         my={{ base: "12", md: "12", lg: "auto" }}
         minH="120vh"
       >
