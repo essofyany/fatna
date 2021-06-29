@@ -11,7 +11,7 @@ function ProductInfo({ setCardState, cardState }) {
   return (
     <Box d="flex" flexDir="column">
       <Box d="flex" alignItems="center" justifyContent="space-between">
-        <Text fontSize="lg" fontWeight="bold">
+        <Text fontSize={{ base: "md", md: "lg" }} fontWeight="bold">
           63$
         </Text>
         <IconTap onClick={handleHeart}>
@@ -22,7 +22,11 @@ function ProductInfo({ setCardState, cardState }) {
           )}
         </IconTap>
       </Box>
-      <Text textTransform="lowerCase" fontWeight="semibold">
+      <Text
+        fontSize={{ base: "sm", md: "md" }}
+        textTransform="lowerCase"
+        fontWeight="semibold"
+      >
         VSCO AESTHETIC SKINNY HIGH WAIST PANTS
       </Text>
     </Box>

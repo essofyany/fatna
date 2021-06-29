@@ -3,7 +3,7 @@ import { Box } from "@chakra-ui/react";
 import ProductImagePlaceholder from "./ProductImagePlaceholder";
 import ProductInfo from "./ProductInfo";
 
-function ProductCard() {
+function ProductCard({ ...styles }) {
   // TODO: make the toast hide after a delay for both add or delete a heart
   const [cardState, setCardState] = useState({
     isHearted: false,
@@ -12,7 +12,10 @@ function ProductCard() {
   useEffect(() => {}, [cardState]);
 
   return (
-    <Box p="1.5" w={{ base: "165px", sm: "170px", md: "190px", lg: "270px" }}>
+    <Box
+      mx="auto"
+      px={{ md: "2", lg: "0" }}
+    >
       <ProductImagePlaceholder
         cardState={cardState}
         setCardState={setCardState}

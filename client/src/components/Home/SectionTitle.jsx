@@ -1,12 +1,18 @@
 import { Box, Heading, Text } from "@chakra-ui/react";
 
-function SectionTitle({ title, subTitle }) {
+function SectionTitle({ title, subTitle, withBar = true }) {
   return (
-    <Box mt={{ base: "16", lg: "5" }} mb="5" w="full" textAlign="center">
-      <Heading fontSize="lg" color="black" textTransform="uppercase">
+    <Box my="5" w="full" textAlign="center">
+      <Heading
+        fontSize={{ base: "md", md: "lg" }}
+        color="black"
+        textTransform="uppercase"
+      >
         {title}
       </Heading>
-      <Box border="2px solid black" mx="auto" my="0.5" maxW='sm' />
+      {withBar ? (
+        <Box border="2px solid black" mx="auto" my="0.5" maxW="sm" />
+      ) : null}
       <Text fontSize="sm" color="gray.500">
         {subTitle}
       </Text>
