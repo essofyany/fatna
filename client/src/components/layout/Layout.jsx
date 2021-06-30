@@ -10,7 +10,9 @@ function Layout({ children }) {
         maxW={{ base: "full", md: "full", lg: "4xl", xl: "7xl" }}
         // bg="blanchedalmond"
         my={{ base: "12", md: "12", lg: "auto" }}
-        minH="120vh"
+        minH="220vh"
+        pos="relative"
+        zIndex="hide"
       >
         {children}
       </Container>

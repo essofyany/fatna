@@ -1,42 +1,22 @@
-import { Box, Center, Text, Heading } from "@chakra-ui/react";
+import { Box, Center, Text } from "@chakra-ui/react";
+import { BsArrowRight } from "react-icons/bs";
 import SectionTitle from "../components/Home/SectionTitle";
 import SlideShow from "../components/Home/SlideShow";
 import Btn from "../components/Materials/Btn";
-import { BsArrowRight } from "react-icons/bs";
-import { RiUserStarFill } from "react-icons/ri";
+import Banner from "../components/Home/Banner";
 
 const HomePage = () => {
   return (
     <>
-      <Center
-        mt={{ base: "20", lg: "5" }}
-        textAlign="center"
-        bg="black"
-        color="white"
-        w="full"
-        px="12"
-        py="7"
-        flexDir="column"
-      >
-        <Box d="flex" alignItems="center">
-          <RiUserStarFill />
-          <Text
-            mx="1"
-            fontSize={{ base: "sm", md: "md", lg: "lg" }}
-            fontWeight="medium"
-          >
-            Premier Delivery
-          </Text>
-        </Box>
-        <Heading
-          fontSize={{ base: "lg", md: "xl", lg: "2xl" }}
-          fontWeight="semibold"
-        >
-          Unlimited Free Next-Day Delivery for a whole year for $9.99
-        </Heading>
-        {/* <Text></Text> */}
-      </Center>
-
+      <Banner
+        main="Unlimited Free Next-Day Delivery for a whole year for $9.99"
+        sub="Premier Delivery"
+      />
+      <Banner
+        main="up to 50% off cosies scarves, boots, jackets, oh my!"
+        textTransform="uppercase"
+        mt='5'
+      />
       <SectionTitle
         title="BEST SELLER AESTHETIC CLOTHES"
         subTitle="Discover our unique & cute aesthetic clothes."
@@ -45,10 +25,7 @@ const HomePage = () => {
       <Box w="full" wd={{ base: "inline", lg: "none" }}>
         <SlideShow />
       </Box>
-      <Box w="full" wd={{ base: "inline", lg: "none" }}>
-        <SlideShow />
-      </Box>
-
+    
       <Center my="5">
         <Btn>
           <Text fontWeight="medium" mr="0.5">

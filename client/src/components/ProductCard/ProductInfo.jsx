@@ -11,14 +11,14 @@ function ProductInfo({ setCardState, cardState }) {
   return (
     <Box d="flex" flexDir="column">
       <Box d="flex" alignItems="center" justifyContent="space-between">
-        <Text fontSize={{ base: "md", md: "lg" }} fontWeight="bold">
+        <Text color="red" fontSize={{ base: "md", md: "lg" }} fontWeight="bold">
           63$
         </Text>
         <IconTap onClick={handleHeart}>
           {cardState.isHearted ? (
             <RiHeart2Fill size="22" />
           ) : (
-            <RiHeart2Line size="22" />
+            <RiHeart2Line color="red" size="22" />
           )}
         </IconTap>
       </Box>

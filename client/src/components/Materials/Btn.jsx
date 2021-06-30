@@ -11,9 +11,6 @@ function Btn({ children, ...styles }) {
       cursor="pointer"
       whileTap={{
         scale: 0.97,
-        style: {
-          x: 10,
-        },
       }}
       px="14"
       py="4"

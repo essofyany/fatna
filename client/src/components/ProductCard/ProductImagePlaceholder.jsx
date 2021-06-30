@@ -10,7 +10,7 @@ import src from "../../../public/assets/images/products/asset 15.jpeg";
 function ProductImagePlaceholder({ cardState, setCardState }) {
   return (
     <AnimatePresence>
-      <Box position="relative" zIndex="hide">
+      <Box>
         <Image src={src} alt="Picture of the author" placeholder="blur" />
         {cardState.isHearted ? (
           <CardToast
