@@ -25,7 +25,7 @@ function Banner({ main, sub, withImage, ...styles }) {
             fontSize={{ base: "sm", md: "md", lg: "lg" }}
             fontWeight="medium"
           >
-            ' {sub}
+            {sub}
           </Text>
         </Box>
       ) : null}

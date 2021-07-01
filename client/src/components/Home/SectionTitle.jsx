@@ -1,8 +1,8 @@
 import { Box, Heading, Text } from "@chakra-ui/react";
 
-function SectionTitle({ title, subTitle, withBar = true }) {
+function SectionTitle({ title, subTitle, withBar = true, ...styles }) {
   return (
-    <Box my="5" w="full" textAlign="center">
+    <Box my="5" w="full" textAlign="center" {...styles}>
       <Heading
         fontSize={{ base: "md", md: "lg" }}
         color="black"

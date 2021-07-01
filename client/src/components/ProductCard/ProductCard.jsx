@@ -12,7 +12,7 @@ function ProductCard({ ...styles }) {
   useEffect(() => {}, [cardState]);
 
   return (
-    <Box pos='relative' mx="auto" px={{ md: "2", lg: "0" }}>
+    <Box mx="auto" px={{ md: "2", lg: "0" }}>
       <ProductImagePlaceholder
         cardState={cardState}
         setCardState={setCardState}

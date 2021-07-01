@@ -12,6 +12,9 @@ import "@fontsource/quicksand/700.css";
 
 import "swiper/swiper-bundle.min.css";
 import "swiper/components/navigation/navigation.min.css";
+import "swiper/components/pagination/pagination.min.css";
+
+import "../styles/styles.css";
 
 function MyApp({ Component, pageProps }) {
   return (

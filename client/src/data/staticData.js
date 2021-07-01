@@ -1,0 +1,80 @@
+export const categories = [
+  {
+    id: "1",
+    categoryName: "indie",
+    imageUrl: "/assets/images/categories/asset 36.jpeg",
+    itemsCount: 23,
+  },
+  {
+    id: "2",
+    categoryName: "y2k",
+    imageUrl: "/assets/images/categories/asset 37.jpeg",
+    itemsCount: 23,
+  },
+  {
+    id: "3",
+    categoryName: "e-girl",
+    imageUrl: "/assets/images/categories/asset 38.jpeg",
+    itemsCount: 23,
+  },
+  {
+    id: "4",
+    categoryName: "vsco",
+    imageUrl: "/assets/images/categories/asset 39.jpeg",
+    itemsCount: 23,
+  },
+  {
+    id: "5",
+    categoryName: "dresses",
+    imageUrl: "/assets/images/categories/asset 45.jpeg",
+    itemsCount: 23,
+  },
+  {
+    id: "6",
+    categoryName: "shorts",
+    imageUrl: "/assets/images/categories/asset 46.jpeg",
+    itemsCount: 23,
+  },
+  {
+    id: "7",
+    categoryName: "shirts",
+    imageUrl: "/assets/images/categories/asset 47.jpeg",
+    itemsCount: 23,
+  },
+  {
+    id: "8",
+    categoryName: "pants",
+    imageUrl: "/assets/images/categories/asset 48.jpeg",
+    itemsCount: 23,
+  },
+  {
+    id: "9",
+    categoryName: "glasses",
+    imageUrl: "/assets/images/categories/asset 49.jpeg",
+    itemsCount: 23,
+  },
+  {
+    id: "10",
+    categoryName: "bags",
+    imageUrl: "/assets/images/categories/asset 50.jpeg",
+    itemsCount: 23,
+  },
+  {
+    id: "11",
+    categoryName: "shoes",
+    imageUrl: "/assets/images/categories/asset 51.jpeg",
+    itemsCount: 23,
+  },
+  {
+    id: "12",
+    categoryName: "necklaces",
+    imageUrl: "/assets/images/categories/asset 52.jpeg",
+    itemsCount: 23,
+  },
+  {
+    id: "13",
+    categoryName: "phone cases",
+    imageUrl: "/assets/images/categories/asset 53.jpeg",
+    itemsCount: 23,
+  },
+];

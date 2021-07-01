@@ -21,6 +21,7 @@ function Footer() {
       borderTop="1px solid #ddd"
       h="12"
       color="black"
+      zIndex="modal"
     >
       <IconTap>
         <HiOutlineHome size="30" />

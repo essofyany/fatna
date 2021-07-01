@@ -23,6 +23,7 @@ function Header() {
       borderBottom={{ base: "1px solid #ddd", lg: "none" }}
       bg="#fff"
       color="black"
+      zIndex="modal"
     >
       {/* Menu icon on mobile/tablet screen  */}
       <IconTap responsive={{ base: "block", lg: "none" }}>
