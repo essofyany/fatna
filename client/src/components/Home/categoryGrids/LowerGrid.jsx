@@ -4,7 +4,7 @@ import CategoryCard from "../CategoryCard";
 function LowerGrid({ categories }) {
   const breakpiont = useBreakpoint({ base: "sm", sm: "md" });
   const sizes = ["md", "lg", "xl", "2xl"];
-  console.log(breakpiont);
+  // console.log(breakpiont);
 
   return (
     <>

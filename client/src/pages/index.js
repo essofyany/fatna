@@ -9,7 +9,7 @@ import Banner from "../components/Home/Banner";
 import CategoryGrid from "../components/Home/CategoryGrid";
 
 const HomePage = ({ categories }) => {
-  console.log(categories);
+  // console.log(categories);
   return (
     <>
       <Head>
@@ -93,7 +93,7 @@ const HomePage = ({ categories }) => {
 export async function getStaticProps(context) {
   const res = await fetch("http://localhost:5000/api/categories");
   const data = await res.json();
-  console.log(data);
+  // console.log(data);
   return {
     props: {
       categories: data.categories,
