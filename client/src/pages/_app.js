@@ -1,5 +1,8 @@
 import { ChakraProvider, ColorModeProvider } from "@chakra-ui/react";
 import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
+import { persistStore } from "redux-persist";
+
 import store from "../store";
 import Layout from "../components/Layout/Layout";
 import theme from "../theme/index";
@@ -15,21 +18,24 @@ import "swiper/components/navigation/navigation.min.css";
 import "swiper/components/pagination/pagination.min.css";
 
 import "../styles/styles.css";
+let persistor = persistStore(store);
 
 function MyApp({ Component, pageProps }) {
   return (
     <Provider store={store}>
-      <ChakraProvider resetCSS theme={theme}>
-        <ColorModeProvider
-          options={{
-            useSystemColorMode: true,
-          }}
-        >
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-        </ColorModeProvider>
-      </ChakraProvider>
+      <PersistGate loading={null} persistor={persistor}>
+        <ChakraProvider resetCSS theme={theme}>
+          <ColorModeProvider
+            options={{
+              useSystemColorMode: true,
+            }}
+          >
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+          </ColorModeProvider>
+        </ChakraProvider>
+      </PersistGate>
     </Provider>
   );
 }

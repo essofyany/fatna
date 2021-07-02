@@ -20,8 +20,14 @@ function ProductBadge({ badge, pos }) {
       bg="black"
       position="absolute"
       top={pos}
+      // mb={{ base: "0", md: "2", lg:'5' }}
     >
-      <Text fontSize="sm" color="white" textTransform="uppercase">
+      <Text
+        fontSize={{ base: "10", md: "14" }}
+        // fontSize="10"
+        color="white"
+        textTransform="uppercase"
+      >
         {badge}
       </Text>
     </MotionBadge>

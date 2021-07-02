@@ -1,7 +1,6 @@
-import { Box, Text, Center } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 import { RiHeart2Fill, RiHeart2Line } from "react-icons/ri";
 import IconTap from "../Motions/IconTap";
-import { onHeartToast } from "../../features/interactionSlice";
 
 function ProductInfo({ setCardState, cardState }) {
   function handleHeart() {
@@ -9,7 +8,7 @@ function ProductInfo({ setCardState, cardState }) {
   }
 
   return (
-    <Box d="flex" flexDir="column">
+    <Box w="full" d="flex" flexDir="column">
       <Box d="flex" alignItems="center" justifyContent="space-between">
         <Text fontSize={{ base: "md", md: "lg" }} fontWeight="bold">
           63$

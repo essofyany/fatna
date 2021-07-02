@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Box, Text, Heading } from "@chakra-ui/react";
 import { BsArrowLeft } from "react-icons/bs";
 import { CgClose, CgShoppingBag } from "react-icons/cg";
@@ -30,14 +31,17 @@ function Header() {
         {/* <BsArrowLeft size="34" /> */}
         <HiOutlineMenuAlt1 size="34" />
       </IconTap>
-      <Heading
-        flex={{ lg: "auto" }}
-        fontSize="3xl"
-        fontWeight="semibold"
-        mx={{ base: "auto", lg: "initial" }}
-      >
-        fatna
-      </Heading>
+      <Link href="/">
+        <Heading
+          flex={{ lg: "auto" }}
+          fontSize="3xl"
+          fontWeight="semibold"
+          cursor="pointer"
+          mx={{ base: "auto", lg: "initial" }}
+        >
+          fatna
+        </Heading>
+      </Link>
 
       {/*Icons on mobile/tablet screen */}
       <Box d={{ base: "block", lg: "none" }}>
@@ -48,15 +52,20 @@ function Header() {
 
       {/* Categories On large screen only */}
       <Box d={{ base: "none", lg: "flex" }} flex="auto" justifyContent="center">
-        <Text fontSize="lg" fontWeight="medium" mx="2">
+        <Text cursor="pointer" fontSize="lg" fontWeight="medium" mx="2">
           Men
         </Text>
-        <Text fontSize="lg" fontWeight="medium" mx="2">
+        <Text cursor="pointer" fontSize="lg" fontWeight="medium" mx="2">
           Women
         </Text>
-        <Text fontSize="lg" fontWeight="medium" mx="2">
+        <Text cursor="pointer" fontSize="lg" fontWeight="medium" mx="2">
           Kids
         </Text>
+        <Link href="/collections">
+          <Text cursor="pointer" fontSize="lg" fontWeight="medium" mx="2">
+            Collections
+          </Text>
+        </Link>
       </Box>
 
       {/* Icons on large screen */}

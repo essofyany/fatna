@@ -1,15 +1,22 @@
+import { useEffect } from "react";
 import Head from "next/head";
-// import {} from "swr";
+import { useDispatch } from "react-redux";
 import { Box, Center, Text } from "@chakra-ui/react";
 import { BsArrowRight } from "react-icons/bs";
 import SectionTitle from "../components/Home/SectionTitle";
 import SlideShow from "../components/Home/SlideShow";
 import Btn from "../components/Materials/Btn";
-import Banner from "../components/Home/Banner";
+import Banner from "../components/Materials/Banner";
 import CategoryGrid from "../components/Home/CategoryGrid";
+import { getCategories } from "../features/categorySlice";
 
 const HomePage = ({ categories }) => {
-  // console.log(categories);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getCategories(categories));
+  }, [dispatch]);
+
   return (
     <>
       <Head>
