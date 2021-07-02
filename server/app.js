@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import cors from "cors";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
+import categoryRoutes from "./routes/categories.js";
 import productRoutes from "./routes/products.js";
 import userRoutes from "./routes/user.js";
 import orderRoutes from "./routes/order.js";
@@ -24,6 +25,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/user", userRoutes);
 app.use("/api/order", orderRoutes);
 app.use("/api/review", reviewRoutes);
+app.use("/api/categories", categoryRoutes);
 
 app.use(errorMiddleware);
 
