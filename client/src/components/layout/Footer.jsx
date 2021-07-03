@@ -12,14 +12,14 @@ function Footer() {
       d={{ base: "flex", lg: "none" }}
       justifyContent="space-around"
       alignItems="center"
-      px="1"
       w="full"
+      h="12"
+      px="1"
       pos="fixed"
       bottom="0"
       right="0"
       bg="#fff"
       borderTop="1px solid #ddd"
-      h="12"
       color="black"
       zIndex="modal"
     >

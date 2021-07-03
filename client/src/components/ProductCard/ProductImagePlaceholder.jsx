@@ -14,7 +14,7 @@ function ProductImagePlaceholder({ cardState, setCardState }) {
   ];
   return (
     <AnimatePresence>
-      <Box bg="red" position="relative">
+      <Box position="relative">
         <Image
           src={src}
           alt="Picture of the author"

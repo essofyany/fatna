@@ -35,7 +35,6 @@ function CategoryCard({ category, ...styles }) {
           border="1.5px solid white"
           position="absolute"
           p="1"
-          zIndex="modal"
           color="white"
           textTransform="uppercase"
           whileHover={{ scale: 1.15, derution: 3000 }}
