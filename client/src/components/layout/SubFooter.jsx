@@ -16,6 +16,7 @@ import {
   HiOutlinePhone,
 } from "react-icons/hi";
 import FooterAccordion from "./FooterAccordion";
+import SocialIconsStack from "../Materials/SocialIconsStack";
 
 function SubFooter() {
   const gridView = useBreakpointValue({
@@ -71,7 +72,9 @@ function SubFooter() {
                     +212 123456789
                   </Text>
                 </Box>
-                <Box d="flex" justifyContent="center" alignItems="center"></Box>
+                <Box d="flex" justifyContent="center" alignItems="center">
+                  <SocialIconsStack />
+                </Box>
               </VStack>
             </GridItem>
             <GridItem colSpan="auto">

@@ -13,6 +13,7 @@ import {
   HiOutlineMail,
   HiOutlinePhone,
 } from "react-icons/hi";
+import SocialIconsStack from "../Materials/SocialIconsStack";
 
 function FooterAccordion() {
   return (
@@ -58,7 +59,9 @@ function FooterAccordion() {
                     +212 123456789
                   </Text>
                 </Box>
-                <Box d="flex" justifyContent="center" alignItems="center"></Box>
+                <Box d="flex" justifyContent="center" alignItems="center">
+                  <SocialIconsStack />
+                </Box>
               </VStack>
             </AccordionPanel>
           </>

@@ -1,14 +1,28 @@
 import Link from "next/link";
-import { Box, Text, Heading, Center, VStack } from "@chakra-ui/react";
+import {
+  Box,
+  Text,
+  Heading,
+  VStack,
+  Grid,
+  GridItem,
+  useBreakpointValue,
+} from "@chakra-ui/react";
 import { BsArrowLeft } from "react-icons/bs";
 import { CgClose, CgShoppingBag } from "react-icons/cg";
 import { RiHeart3Line, RiSearchLine } from "react-icons/ri";
 import { BiUser } from "react-icons/bi";
 import { FiShoppingCart } from "react-icons/fi";
 import { HiOutlineMenuAlt1 } from "react-icons/hi";
+
 import IconTap from "../Motions/IconTap";
+import SocialIconsStack from "../Materials/SocialIconsStack";
+import CurrencyMenu from "../Materials/CurrencyMenu";
 
 function Header() {
+  const gridView = useBreakpointValue({
+    lg: "",
+  });
   return (
     <VStack
       w="full"
@@ -19,24 +33,39 @@ function Header() {
       zIndex="modal"
       spacing="0"
     >
-      <Center
-        d="flex"
-        alignItems="center"
-        justifyContent="center"
+      {/* Sub Header */}
+      <Grid
         w="full"
+        templateColumns={{ base: '"repeat(1, 1fr)"', lg: "repeat(4, 1fr)" }}
+        gap={5}
+        px="5"
         py="3"
-        px={{ base: "3", lg: "5" }}
-        bg="black"
+        alignItems="center"
       >
-        <Text
-          textTransform="uppercase"
-          color="white"
-          zIndex="modal"
-          fontSize={{ base: "sm", lg: "md" }}
+        <GridItem colSpan="1" d={{ base: "none", lg: "inline" }}>
+          <SocialIconsStack />
+        </GridItem>
+        <GridItem colSpan="2">
+          <Text
+            textTransform="uppercase"
+            color="white"
+            zIndex="modal"
+            fontSize={{ base: "sm", lg: "md" }}
+            textAlign="center"
+          >
+            free shipping worldwide
+          </Text>
+        </GridItem>
+        <GridItem
+          colSpan="1"
+          justifySelf="end"
+          d={{ base: "none", lg: "inline" }}
         >
-          free shipping worldwide
-        </Text>
-      </Center>
+          <CurrencyMenu />
+        </GridItem>
+      </Grid>
+
+      {/* Main Header */}
       <Box
         d="flex"
         alignItems="center"
