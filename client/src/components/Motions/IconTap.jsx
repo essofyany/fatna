@@ -1,11 +1,14 @@
 import { Box } from "@chakra-ui/react";
 import { motion } from "framer-motion";
+import { forwardRef } from "react";
 const MotionBox = motion(Box);
 
-function IconTap({ responsive, children, ...styles }) {
+const IconTap = forwardRef((props, ref) => {
+  const { responsive, children, ...styles } = props;
   return (
     <MotionBox
-    d={responsive}
+      ref={ref}
+      d={responsive}
       cursor="pointer"
       whileTap={{ scale: 0.8 }}
       {...styles}
@@ -13,6 +16,6 @@ function IconTap({ responsive, children, ...styles }) {
       {children}
     </MotionBox>
   );
-}
+});
 
 export default IconTap;

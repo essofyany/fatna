@@ -3,7 +3,11 @@ import CategoryCard from "../CategoryCard";
 
 function UpperGrid({ categories }) {
   return (
-    <Grid w="full" gap={4} templateColumns="repeat(4, 1fr)">
+    <Grid
+      w="full"
+      gap={4}
+      templateColumns={{ base: "repeat(2, 1fr)", lg: "repeat(4, 1fr)" }}
+    >
       {categories.map((item, idx) => (
         <GridItem colSpan="auto" key={idx}>
           <CategoryCard key={item.id} category={item} />

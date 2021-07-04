@@ -30,7 +30,7 @@ function CategoryCard({ category, ...styles }) {
         />
 
         <MotionText
-          fontSize={{ base: "10px", sm: "16", md: "3xl", lg: "4xl" }}
+          fontSize={{ base: "lg", sm: "2xl", md: "3xl", lg: "4xl" }}
           fontWeight="black"
           border="1.5px solid white"
           position="absolute"
