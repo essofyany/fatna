@@ -39,7 +39,7 @@ function SideMenu({ isOpen, onClose, btnRef }) {
         {/* Header */}
         <DrawerHeader p="0">
           <Grid
-            w="full"
+            // w="full"
             templateColumns="repeat(3, 1fr)"
             borderBottom="0.5px solid lightGrey"
           >
@@ -70,7 +70,7 @@ function SideMenu({ isOpen, onClose, btnRef }) {
           </Grid>
         </DrawerHeader>
         {/* body */}
-        <DrawerBody p="0">
+        <DrawerBody p="0" overflow="hidden">
           <NavigationList
             navList={navList}
             p="3"

@@ -9,8 +9,6 @@ import {
   GridItem,
   useDisclosure,
 } from "@chakra-ui/react";
-import { BsArrowLeft } from "react-icons/bs";
-import { CgClose, CgShoppingBag } from "react-icons/cg";
 import { RiHeart3Line, RiSearchLine } from "react-icons/ri";
 import { BiUser } from "react-icons/bi";
 import { FiShoppingCart } from "react-icons/fi";
@@ -20,6 +18,7 @@ import NavigationList from "./NavigationList";
 import SocialIconsStack from "../Materials/SocialIconsStack";
 import CurrencyMenu from "../Materials/CurrencyMenu";
 import SideMenu from "../Materials/SideMenu";
+import SmilerAssistant from "../Materials/SmilerAssistant";
 
 function Header() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -106,7 +105,7 @@ function Header() {
           {/* use a smile assisstant emoji instead */}
           <Box d={{ base: "block", lg: "none" }}>
             <IconTap>
-              <CgClose size="28" />
+              <SmilerAssistant />
             </IconTap>
           </Box>
 

@@ -6,7 +6,7 @@ function UpperGrid({ categories }) {
     <Grid
       w="full"
       gap={4}
-      templateColumns={{ base: "repeat(2, 1fr)", lg: "repeat(4, 1fr)" }}
+      templateColumns={{ base: "repeat(2, 1fr)", md: "repeat(4, 1fr)" }}
     >
       {categories.map((item, idx) => (
         <GridItem colSpan="auto" key={idx}>
