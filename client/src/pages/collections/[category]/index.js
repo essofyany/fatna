@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useRouter } from "next/router";
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -9,10 +9,12 @@ import {
   Center,
   useBreakpointValue,
   useBreakpoint,
+  useDisclosure,
 } from "@chakra-ui/react";
 import ProductCard from "../../../components/ProductCard/ProductCard";
 import Banner from "../../../components/Materials/Banner";
 import Filter from "../../../components/Materials/Filter";
+import SideMenu from "../../../components/Materials/SideMenu";
 import {
   ViewIcons1,
   ViewIcons2,
@@ -23,6 +25,8 @@ import { setView } from "../../../features/viewsSlice";
 import { BiFilter, BiFilterAlt } from "react-icons/bi";
 
 function ProductsList() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const filterBtnRef = useRef();
   const dispatch = useDispatch();
   const gridView = useSelector((state) => state.views.gridType);
   const selectedView = useSelector((state) => state.views.selectedView);
@@ -54,7 +58,14 @@ function ProductsList() {
       >
         <Box d="flex" alignItems="center" w="33%" p="3">
           <BiFilterAlt size="21" />
-          <Text ml="2" fontSize="lg" fontWeight="medium">
+          <Text
+            cursor="pointer"
+            ml="2"
+            fontSize="lg"
+            ref={filterBtnRef}
+            onClick={onOpen}
+            fontWeight="medium"
+          >
             Filter by
           </Text>
         </Box>
@@ -91,7 +102,7 @@ function ProductsList() {
           </Text>
         </Box>
       </Box>
-      {/* products list */}
+      {/* products list and Filter(> L screen ) */}
       <Grid
         w="full"
         my="5"
@@ -117,6 +128,15 @@ function ProductsList() {
           </Grid>
         </GridItem>
       </Grid>
+      {/* Filter Menu on md screen and below*/}
+      <SideMenu
+        btnRef={filterBtnRef}
+        isOpen={isOpen}
+        onClose={onClose}
+        navList=""
+      >
+        <Filter forDrawer={true} />
+      </SideMenu>
     </>
   );
 }

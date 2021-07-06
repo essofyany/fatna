@@ -6,7 +6,7 @@ import Btn from "./Btn";
 const { createSliderWithTooltip } = Slider;
 const Range = createSliderWithTooltip(Slider.Range);
 
-function PriceSliderFilter() {
+function PriceSliderFilter({ withBtn = true }) {
   const [range, setRange] = useState([20, 120]);
   return (
     <VStack w="full" spacing="2" alignItems="start">
@@ -38,9 +38,11 @@ function PriceSliderFilter() {
           </Text>
         </Box>
       </Box>
-      <Btn size="sm" w="full" mt="2" fontSize="sm" py="0">
-        Filter
-      </Btn>
+      {withBtn && (
+        <Btn size="sm" w="full" mt="2" fontSize="sm" py="0">
+          Filter
+        </Btn>
+      )}
     </VStack>
   );
 }

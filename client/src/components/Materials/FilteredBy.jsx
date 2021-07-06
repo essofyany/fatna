@@ -1,7 +1,7 @@
 import { Box, VStack, Text, Input, Checkbox } from "@chakra-ui/react";
 import Btn from "./Btn";
 
-function FilteredBy({ filterByTitle, filterBy = "search" }) {
+function FilteredBy({ withBtn = true, filterByTitle, filterBy = "search" }) {
   return (
     <VStack w="full" spacing="2" alignItems="start">
       <Text
@@ -23,9 +23,11 @@ function FilteredBy({ filterByTitle, filterBy = "search" }) {
               colorScheme="blackAlpha"
               _focus={{ outline: "none", border: "1px solid black" }}
             />
-            <Btn size="sm" w="full" mt="2" fontSize="sm" py="0">
-              Filter
-            </Btn>
+            {withBtn && (
+              <Btn size="sm" w="full" mt="2" fontSize="sm" py="0">
+                Filter
+              </Btn>
+            )}
           </Box>
         )}
         {filterBy === "size" && (
