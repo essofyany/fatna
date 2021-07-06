@@ -17,7 +17,11 @@ import "swiper/swiper-bundle.min.css";
 import "swiper/components/navigation/navigation.min.css";
 import "swiper/components/pagination/pagination.min.css";
 
+import "rc-slider/assets/index.css";
+import "rc-tooltip/assets/bootstrap.css";
+
 import "../styles/styles.css";
+
 let persistor = persistStore(store);
 
 function MyApp({ Component, pageProps }) {

@@ -10,8 +10,9 @@ import {
   useBreakpointValue,
   useBreakpoint,
 } from "@chakra-ui/react";
-import Banner from "../../../components/Materials/Banner";
 import ProductCard from "../../../components/ProductCard/ProductCard";
+import Banner from "../../../components/Materials/Banner";
+import Filter from "../../../components/Materials/Filter";
 import {
   ViewIcons1,
   ViewIcons2,
@@ -19,13 +20,12 @@ import {
   ViewIcons4,
 } from "../../../Icons/ViewIcons";
 import { setView } from "../../../features/viewsSlice";
+import { BiFilter, BiFilterAlt } from "react-icons/bi";
 
 function ProductsList() {
   const dispatch = useDispatch();
-
   const gridView = useSelector((state) => state.views.gridType);
   const selectedView = useSelector((state) => state.views.selectedView);
-
   const views = useBreakpoint();
   const gridTemplates = useBreakpointValue({
     base: "repeat(2,1fr)",
@@ -52,9 +52,12 @@ function ProductsList() {
         w="full"
         my="5"
       >
-        <Center w="33%" bg="red.100" p="3">
-          <Text>Sort</Text>
-        </Center>
+        <Box d="flex" alignItems="center" w="33%" p="3">
+          <BiFilterAlt size="21" />
+          <Text ml="2" fontSize="lg" fontWeight="medium">
+            Filter by
+          </Text>
+        </Box>
         <Center w="33%" p="3" justifyContent="space-evenly">
           {(views === "base" || views === "sm") && (
             <>
@@ -75,35 +78,44 @@ function ProductsList() {
             </>
           )}
         </Center>
-        <Center w="33%" bg="blue.100" p="3">
-          <Text>Filter</Text>
-        </Center>
+        <Box
+          d="flex"
+          alignItems="center"
+          justifyContent="flex-end"
+          w="33%"
+          p="3"
+        >
+          <BiFilter size="24" />
+          <Text ml="2" fontSize="lg" fontWeight="medium">
+            Sort by
+          </Text>
+        </Box>
       </Box>
       {/* products list */}
       <Grid
         w="full"
         my="5"
-        templateColumns={{
-          base: gridTemplates,
-          md: gridTemplates,
-          lg: gridTemplates,
-        }}
-        gap={4}
-        templateColumns={
-          gridView
-            ? gridView
-            : {
-                base: gridTemplates,
-                md: gridTemplates,
-                lg: gridTemplates,
-              }
-        }
+        gap={5}
+        templateColumns={{ base: "repeat(4,1fr)", lg: "repeat(5,1fr)" }}
       >
-        {list.map((item) => (
-          <GridItem key={item}>
-            <ProductCard />
-          </GridItem>
-        ))}
+        {/* filter area */}
+        <GridItem colSpan="1" w="full" d={{ base: "none", lg: "initial" }}>
+          <Filter />
+        </GridItem>
+        {/* Products list area */}
+        <GridItem w="full" colSpan="4">
+          <Grid
+            w="full"
+            gap={4}
+            templateColumns={gridView ? gridView : gridTemplates}
+          >
+            {list.map((item) => (
+              <GridItem colSpan="auto" key={item}>
+                <ProductCard />
+              </GridItem>
+            ))}
+          </Grid>
+        </GridItem>
       </Grid>
     </>
   );
