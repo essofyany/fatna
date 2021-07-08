@@ -17,6 +17,7 @@ import createWebStorage from "redux-persist/lib/storage/createWebStorage";
 import interactionReducer from "./features/interactionSlice";
 import viewsReducer from "./features/viewsSlice";
 import categoryReducer from "./features/categorySlice";
+import currencyReducer from "./features/currencySlice";
 
 const createNoopStorage = () => {
   return {
@@ -41,6 +42,7 @@ const rootReducer = combineReducers({
   views: viewsReducer,
   interactions: interactionReducer,
   category: categoryReducer,
+  currency: currencyReducer,
 });
 
 const persistConfig = {

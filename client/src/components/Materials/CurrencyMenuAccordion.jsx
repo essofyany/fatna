@@ -1,35 +1,29 @@
 import {
-  Box,
-  Text,
+  VStack,
   Accordion,
   AccordionItem,
   AccordionButton,
   AccordionPanel,
 } from "@chakra-ui/react";
 import { MinusIcon, AddIcon } from "@chakra-ui/icons";
-import {
-  HiCurrencyDollar,
-  HiCurrencyEuro,
-  HiCurrencyPound,
-  HiCurrencyRupee,
-  HiCurrencyYen,
-} from "react-icons/hi";
-import IconTap from "../Motions/IconTap";
+import { USD, EUR, YEN, PND, RUP } from "./Currencies";
+import { useSelector } from "react-redux";
+import { useEffect } from "react";
 
 function CurrencyMenuAccordion() {
+  const currentCurrency = useSelector((state) => state.currency.current);
+  const currencies = useSelector((state) => state.currency.currencyList);
+
+  useEffect(() => {}, [currentCurrency.name]);
+
   return (
     <Accordion allowMultiple>
       <AccordionItem>
         {({ isExpanded }) => (
           <>
             <h2>
-              <AccordionButton>
-                <Box d="flex" flex="1" textAlign="left">
-                  <HiCurrencyDollar size="22" />
-                  <Text px="1" fontWeight="medium">
-                    USD
-                  </Text>
-                </Box>
+              <AccordionButton justifyContent="space-between">
+                {currentCurrency.component}
                 {isExpanded ? (
                   <MinusIcon fontSize="12px" />
                 ) : (
@@ -38,77 +32,11 @@ function CurrencyMenuAccordion() {
               </AccordionButton>
             </h2>
             <AccordionPanel pb={4}>
-              <IconTap>
-                <Box
-                  w="full"
-                  py="2"
-                  px="1"
-                  borderBottom="1px solid lightGrey"
-                  opacity="1"
-                  d="flex"
-                  alignItems="center"
-                  color="black"
-                  cursor="pointer"
-                >
-                  <HiCurrencyEuro size="22" />
-                  <Text px="1" fontWeight="medium">
-                    EUR
-                  </Text>
-                </Box>
-              </IconTap>
-              <IconTap>
-                <Box
-                  w="full"
-                  py="2"
-                  px="1"
-                  borderBottom="1px solid lightGrey"
-                  opacity="1"
-                  d="flex"
-                  alignItems="center"
-                  color="black"
-                  cursor="pointer"
-                >
-                  <HiCurrencyPound size="22" />
-                  <Text px="1" fontWeight="medium">
-                    PND
-                  </Text>
-                </Box>
-              </IconTap>
-              <IconTap>
-                <Box
-                  w="full"
-                  py="2"
-                  px="1"
-                  borderBottom="1px solid lightGrey"
-                  opacity="1"
-                  d="flex"
-                  alignItems="center"
-                  color="black"
-                  cursor="pointer"
-                >
-                  <HiCurrencyYen size="22" />
-                  <Text px="1" fontWeight="medium">
-                    YEN
-                  </Text>
-                </Box>
-              </IconTap>
-              <IconTap>
-                <Box
-                  w="full"
-                  py="3"
-                  px="1"
-                  opacity="1"
-                  d="flex"
-                  alignItems="center"
-                  color="black"
-                  cursor="pointer"
-                >
-                  <HiCurrencyRupee size="22" />
-                  <Text px="1" fontWeight="medium">
-                    RUP
-                  </Text>
-                </Box>
-              </IconTap>
+              <VStack alignItems="start" spacing="2">
+                {currencies.map((item) => {
+                  return item.component;
+                })}
+              </VStack>
             </AccordionPanel>
           </>
         )}
