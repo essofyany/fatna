@@ -1,24 +1,22 @@
-import { useState } from "react";
-import { Box, Text, VStack } from "@chakra-ui/react";
-import {
-  HiCurrencyDollar,
-  HiCurrencyEuro,
-  HiCurrencyPound,
-  HiCurrencyRupee,
-  HiCurrencyYen,
-} from "react-icons/hi";
-import { IoIosArrowDown } from "react-icons/io";
-import IconTap from "../Motions/IconTap";
+import { useEffect, useState } from "react";
+import { Box, VStack } from "@chakra-ui/react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useSelector } from "react-redux";
 
 const MotionVStack = motion(VStack);
 
 function CurrencyMenu() {
+  const currentCurrency = useSelector((state) => state.currency.current);
+  const currencies = useSelector((state) => state.currency.currencyList);
   const [isExpanded, setIsExpanded] = useState(false);
 
   function handleClick() {
     setIsExpanded(!isExpanded);
   }
+
+  useEffect(() => {
+    setIsExpanded(false);
+  }, [currentCurrency.name]);
 
   return (
     <>
@@ -30,11 +28,8 @@ function CurrencyMenu() {
         color="white"
         cursor="pointer"
       >
-        <HiCurrencyDollar size="22" />
-        <Text px="1" fontWeight="medium">
-          USD
-        </Text>
-        <IoIosArrowDown size="16" />
+        {currentCurrency.selectedComponent}
+        {/* <USD selected={true} /> */}
       </Box>
       {/* currency menu */}
       <Box pos="relative">
@@ -55,70 +50,9 @@ function CurrencyMenu() {
               py="3"
               w="32"
             >
-              <IconTap>
-                <Box
-                  w="full"
-                  px="8"
-                  opacity="1"
-                  d="flex"
-                  alignItems="center"
-                  color="black"
-                  cursor="pointer"
-                >
-                  <HiCurrencyEuro size="22" />
-                  <Text px="1" fontWeight="medium">
-                    EUR
-                  </Text>
-                </Box>
-              </IconTap>
-              <IconTap>
-                <Box
-                  w="full"
-                  px="8"
-                  opacity="1"
-                  d="flex"
-                  alignItems="center"
-                  color="black"
-                  cursor="pointer"
-                >
-                  <HiCurrencyPound size="22" />
-                  <Text px="1" fontWeight="medium">
-                    PND
-                  </Text>
-                </Box>
-              </IconTap>
-              <IconTap>
-                <Box
-                  w="full"
-                  px="8"
-                  opacity="1"
-                  d="flex"
-                  alignItems="center"
-                  color="black"
-                  cursor="pointer"
-                >
-                  <HiCurrencyYen size="22" />
-                  <Text px="1" fontWeight="medium">
-                    YEN
-                  </Text>
-                </Box>
-              </IconTap>
-              <IconTap>
-                <Box
-                  w="full"
-                  px="8"
-                  opacity="1"
-                  d="flex"
-                  alignItems="center"
-                  color="black"
-                  cursor="pointer"
-                >
-                  <HiCurrencyRupee size="22" />
-                  <Text px="1" fontWeight="medium">
-                    RUP
-                  </Text>
-                </Box>
-              </IconTap>
+              {currencies.map((item) => {
+                return item.component;
+              })}
             </MotionVStack>
           )}
         </AnimatePresence>

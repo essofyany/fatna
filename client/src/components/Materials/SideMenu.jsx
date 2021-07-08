@@ -75,13 +75,13 @@ function SideMenu({
               </GridItem>
             </Grid>
           ) : (
-            <Center bg="black" p='2' color="white">
+            <Center bg="black" p="2" color="white">
               <Text>Filter</Text>
             </Center>
           )}
         </DrawerHeader>
         {/* body */}
-        <DrawerBody p="4" overflow={navList ? "hidden" : "scroll"}>
+        <DrawerBody p="4" overflow="scroll">
           {navList ? (
             <>
               <NavigationList
