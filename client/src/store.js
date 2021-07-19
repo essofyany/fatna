@@ -18,6 +18,7 @@ import interactionReducer from "./features/interactionSlice";
 import viewsReducer from "./features/viewsSlice";
 import categoryReducer from "./features/categorySlice";
 import currencyReducer from "./features/currencySlice";
+import sortReducer from "./features/sortSlice";
 
 const createNoopStorage = () => {
   return {
@@ -43,6 +44,7 @@ const rootReducer = combineReducers({
   interactions: interactionReducer,
   category: categoryReducer,
   currency: currencyReducer,
+  sortMenu: sortReducer,
 });
 
 const persistConfig = {

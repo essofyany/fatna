@@ -56,11 +56,11 @@ function CurrencyMenu() {
               py="3"
               w="32"
             >
-              <USD />
-              <EUR />
-              <YEN />
-              <PND />
-              <RUP />
+              <USD _hover={{ fontWeight: "semibold" }} />
+              <EUR _hover={{ fontWeight: "semibold" }} />
+              <YEN _hover={{ fontWeight: "semibold" }} />
+              <PND _hover={{ fontWeight: "semibold" }} />
+              <RUP _hover={{ fontWeight: "semibold" }} />
             </MotionVStack>
           )}
         </AnimatePresence>

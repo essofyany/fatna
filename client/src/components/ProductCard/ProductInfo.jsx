@@ -5,7 +5,6 @@ import IconTap from "../Motions/IconTap";
 import { currencySelector } from "../Materials/Currencies";
 function ProductInfo({ setCardState, cardState }) {
   const currentCurrency = useSelector((state) => state.currency.current);
-  console.log(currentCurrency);
   function handleHeart() {
     setCardState({ ...cardState, isHearted: !cardState.isHearted });
   }

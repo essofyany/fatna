@@ -14,8 +14,9 @@ import Banner from "../../../components/Materials/Banner";
 import Filter from "../../../components/Materials/Filter";
 import SideMenu from "../../../components/Materials/SideMenu";
 import { WideView, MediumView, SmallView } from "../../../Icons/ViewIcons";
-import { BiFilter, BiFilterAlt } from "react-icons/bi";
+import { BiFilterAlt } from "react-icons/bi";
 import DynamicGrid from "../../../components/Materials/DynamicGrid";
+import SortMenu from "../../../components/Materials/SortMenu";
 
 function ProductsList() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -42,6 +43,7 @@ function ProductsList() {
         w="full"
         my="5"
       >
+        {/* filter */}
         <Box d="flex" alignItems="center" w="33%" p="3">
           <BiFilterAlt size="21" />
           <Text
@@ -55,22 +57,21 @@ function ProductsList() {
             Filter by
           </Text>
         </Box>
+        {/* switch views */}
         <Center w="33%" p="3" justifyContent="space-evenly">
           {currentView === "small" && <SmallView />}
           {currentView === "medium" && <MediumView />}
           {currentView === "large" && <WideView />}
         </Center>
+        {/* sort  */}
         <Box
+          position="relative"
           d="flex"
+          w="33%"
           alignItems="center"
           justifyContent="flex-end"
-          w="33%"
-          p="3"
         >
-          <BiFilter size="24" />
-          <Text ml="2" fontSize="lg" fontWeight="medium">
-            Sort by
-          </Text>
+          <SortMenu />
         </Box>
       </Box>
       {/* products list and Filter(> L screen ) */}

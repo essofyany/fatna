@@ -11,7 +11,6 @@ function DynamicGrid({ children }) {
     lg: "repeat(4,1fr)",
   });
   const gridTemplate = useSelector((state) => state.views.gridTemplate);
-  console.log("gridTemplate: ", gridTemplate);
 
   useEffect(() => {
     dispatch(setView(""));

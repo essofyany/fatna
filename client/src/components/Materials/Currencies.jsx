@@ -61,7 +61,7 @@ export function currencySelector(currencyName) {
   }
 }
 
-export function USD({ selected, forProduct = false }) {
+export function USD({ selected, forProduct = false, ...styles }) {
   const dispatch = useDispatch();
   return (
     <>
@@ -79,7 +79,7 @@ export function USD({ selected, forProduct = false }) {
             onClick={() => dispatch(changeCurrency("USD"))}
           >
             <HiCurrencyDollar size="22" />
-            <Text px="1" fontWeight="medium">
+            <Text {...styles} px="1" fontWeight="medium">
               USD
             </Text>
             {selected && <IoIosArrowDown size="16" />}
@@ -90,7 +90,7 @@ export function USD({ selected, forProduct = false }) {
   );
 }
 
-export function EUR({ selected, forProduct = false }) {
+export function EUR({ selected, forProduct = false, ...styles }) {
   const dispatch = useDispatch();
   return (
     <>
@@ -108,7 +108,7 @@ export function EUR({ selected, forProduct = false }) {
             onClick={() => dispatch(changeCurrency("EUR"))}
           >
             <HiCurrencyEuro size="22" />
-            <Text px="1" fontWeight="medium">
+            <Text {...styles} px="1" fontWeight="medium">
               EUR
             </Text>
             {selected && <IoIosArrowDown size="16" />}
@@ -119,7 +119,7 @@ export function EUR({ selected, forProduct = false }) {
   );
 }
 
-export function YEN({ selected, forProduct = false }) {
+export function YEN({ selected, forProduct = false, ...styles }) {
   const dispatch = useDispatch();
   return (
     <>
@@ -137,7 +137,7 @@ export function YEN({ selected, forProduct = false }) {
             onClick={() => dispatch(changeCurrency("YEN"))}
           >
             <HiCurrencyYen size="22" />
-            <Text px="1" fontWeight="medium">
+            <Text {...styles} px="1" fontWeight="medium">
               YEN
             </Text>
             {selected && <IoIosArrowDown size="16" />}
@@ -148,7 +148,7 @@ export function YEN({ selected, forProduct = false }) {
   );
 }
 
-export function PND({ selected, forProduct = false }) {
+export function PND({ selected, forProduct = false, ...styles }) {
   const dispatch = useDispatch();
   return (
     <>
@@ -166,7 +166,7 @@ export function PND({ selected, forProduct = false }) {
             onClick={() => dispatch(changeCurrency("PND"))}
           >
             <HiCurrencyPound size="22" />
-            <Text px="1" fontWeight="medium">
+            <Text {...styles} px="1" fontWeight="medium">
               PND
             </Text>
             {selected && <IoIosArrowDown size="16" />}
@@ -177,7 +177,7 @@ export function PND({ selected, forProduct = false }) {
   );
 }
 
-export function RUP({ selected, forProduct = false }) {
+export function RUP({ selected, forProduct = false, ...styles }) {
   const dispatch = useDispatch();
   return (
     <>
@@ -195,7 +195,7 @@ export function RUP({ selected, forProduct = false }) {
             onClick={() => dispatch(changeCurrency("RUP"))}
           >
             <HiCurrencyRupee size="22" />
-            <Text px="1" fontWeight="medium">
+            <Text {...styles} px="1" fontWeight="medium">
               RUP
             </Text>
             {selected && <IoIosArrowDown size="16" />}
