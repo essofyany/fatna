@@ -1,8 +1,9 @@
+import { useState } from "react";
 import { Box } from "@chakra-ui/react";
-import { useDispatch } from "react-redux";
-import { setView, switchView } from "../features/viewsSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { setView } from "../features/viewsSlice";
 
-export function ViewIcons1({ selectedView, ...styles }) {
+function ViewIcons1({ selectedView, ...styles }) {
   const dispatch = useDispatch();
   return (
     <Box
@@ -15,7 +16,6 @@ export function ViewIcons1({ selectedView, ...styles }) {
       border={`1px solid ${selectedView ? "black" : "gray"}`}
       {...styles}
       onClick={() => {
-        dispatch(switchView("base"));
         dispatch(setView("repeat(1,1fr)"));
       }}
     >
@@ -24,7 +24,7 @@ export function ViewIcons1({ selectedView, ...styles }) {
   );
 }
 
-export function ViewIcons2({ selectedView, ...styles }) {
+function ViewIcons2({ selectedView, ...styles }) {
   const dispatch = useDispatch();
   return (
     <Box
@@ -37,8 +37,6 @@ export function ViewIcons2({ selectedView, ...styles }) {
       border={`1px solid ${selectedView ? "black" : "gray"}`}
       {...styles}
       onClick={() => {
-        dispatch(switchView("base"));
-        dispatch(switchView("md"));
         dispatch(setView("repeat(2,1fr)"));
       }}
     >
@@ -48,7 +46,7 @@ export function ViewIcons2({ selectedView, ...styles }) {
   );
 }
 
-export function ViewIcons3({ selectedView, ...styles }) {
+function ViewIcons3({ selectedView, ...styles }) {
   const dispatch = useDispatch();
   return (
     <Box
@@ -61,8 +59,6 @@ export function ViewIcons3({ selectedView, ...styles }) {
       border={`1px solid ${selectedView ? "black" : "gray"}`}
       {...styles}
       onClick={() => {
-        dispatch(switchView("md"));
-        dispatch(switchView("lg"));
         dispatch(setView("repeat(3,1fr)"));
       }}
     >
@@ -73,7 +69,7 @@ export function ViewIcons3({ selectedView, ...styles }) {
   );
 }
 
-export function ViewIcons4({ selectedView, ...styles }) {
+function ViewIcons4({ selectedView, ...styles }) {
   const dispatch = useDispatch();
   return (
     <Box
@@ -86,7 +82,6 @@ export function ViewIcons4({ selectedView, ...styles }) {
       border={`1px solid ${selectedView ? "black" : "gray"}`}
       {...styles}
       onClick={() => {
-        dispatch(switchView("lg"));
         dispatch(setView("repeat(4,1fr)"));
       }}
     >
@@ -95,5 +90,45 @@ export function ViewIcons4({ selectedView, ...styles }) {
       <Box bg={selectedView ? "black" : "gray"} w="2" h="4" />
       <Box bg={selectedView ? "black" : "gray"} w="2" h="4" />
     </Box>
+  );
+}
+
+export function SmallView() {
+  const [clicked, setClicked] = useState(false);
+  return (
+    <>
+      <Box onClick={() => setClicked(true)}>
+        <ViewIcons1 selectedView={clicked} />
+      </Box>
+      <Box onClick={() => setClicked(false)}>
+        <ViewIcons2 selectedView={!clicked} />
+      </Box>
+    </>
+  );
+}
+export function MediumView() {
+  const [clicked, setClicked] = useState(false);
+  return (
+    <>
+      <Box onClick={() => setClicked(true)}>
+        <ViewIcons2 selectedView={clicked} />
+      </Box>
+      <Box onClick={() => setClicked(false)}>
+        <ViewIcons3 selectedView={!clicked} />
+      </Box>
+    </>
+  );
+}
+export function WideView() {
+  const [clicked, setClicked] = useState(false);
+  return (
+    <>
+      <Box onClick={() => setClicked(true)}>
+        <ViewIcons3 selectedView={clicked} />
+      </Box>
+      <Box onClick={() => setClicked(false)}>
+        <ViewIcons4 selectedView={!clicked} />
+      </Box>
+    </>
   );
 }

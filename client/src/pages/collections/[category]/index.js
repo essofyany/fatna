@@ -15,31 +15,27 @@ import ProductCard from "../../../components/ProductCard/ProductCard";
 import Banner from "../../../components/Materials/Banner";
 import Filter from "../../../components/Materials/Filter";
 import SideMenu from "../../../components/Materials/SideMenu";
-import {
-  ViewIcons1,
-  ViewIcons2,
-  ViewIcons3,
-  ViewIcons4,
-} from "../../../Icons/ViewIcons";
+import { WideView, MediumView, SmallView } from "../../../Icons/ViewIcons";
 import { setView } from "../../../features/viewsSlice";
 import { BiFilter, BiFilterAlt } from "react-icons/bi";
+import DynamicGrid from "../../../components/Materials/DynamicGrid";
 
 function ProductsList() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const filterBtnRef = useRef();
   const dispatch = useDispatch();
-  const gridView = useSelector((state) => state.views.gridType);
-  const selectedView = useSelector((state) => state.views.selectedView);
-  const views = useBreakpoint();
+  const currentView = useBreakpointValue({
+    base: "small",
+    sm: "small",
+    md: "medium",
+    lg: "large",
+    xl: "large",
+  });
   const gridTemplates = useBreakpointValue({
     base: "repeat(2,1fr)",
     md: "repeat(3,1fr)",
     lg: "repeat(4,1fr)",
   });
-
-  useEffect(() => {
-    dispatch(setView(null));
-  }, [views]);
 
   // console.log(views);
   const router = useRouter();
@@ -47,8 +43,7 @@ function ProductsList() {
   return (
     <>
       <Banner textTransform="uppercase" main={router.query.category} />
-      {/* filter / sort / view panel*/}
-      {/* // TODO: fix grid views icons activation */}
+      {/* filter / sort / switch view */}
       <Box
         d="flex"
         justifyContent="space-between"
@@ -70,24 +65,9 @@ function ProductsList() {
           </Text>
         </Box>
         <Center w="33%" p="3" justifyContent="space-evenly">
-          {(views === "base" || views === "sm") && (
-            <>
-              <ViewIcons1 selectedView={!selectedView.base} />
-              <ViewIcons2 selectedView={selectedView.base} />
-            </>
-          )}
-          {views === "md" && (
-            <>
-              <ViewIcons2 selectedView={!selectedView.md} />
-              <ViewIcons3 selectedView={selectedView.md} />
-            </>
-          )}
-          {views !== "md" && views !== "sm" && views !== "base" && (
-            <>
-              <ViewIcons3 selectedView={!selectedView.lg} />
-              <ViewIcons4 selectedView={selectedView.lg} />
-            </>
-          )}
+          {currentView === "small" && <SmallView />}
+          {currentView === "medium" && <MediumView />}
+          {currentView === "large" && <WideView />}
         </Center>
         <Box
           d="flex"
@@ -115,17 +95,15 @@ function ProductsList() {
         </GridItem>
         {/* Products list area */}
         <GridItem w="full" colSpan="4">
-          <Grid
-            w="full"
-            gap={4}
-            templateColumns={gridView ? gridView : gridTemplates}
-          >
+          <DynamicGrid>
+            {/* <Grid w="full" gap={4} templateColumns={gridTemplates}> */}
             {list.map((item) => (
               <GridItem colSpan="auto" key={item}>
                 <ProductCard />
               </GridItem>
             ))}
-          </Grid>
+            {/* </Grid> */}
+          </DynamicGrid>
         </GridItem>
       </Grid>
       {/* Filter Menu on md screen and below*/}

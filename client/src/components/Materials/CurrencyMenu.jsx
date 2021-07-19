@@ -51,7 +51,7 @@ function CurrencyMenu() {
               w="32"
             >
               {currencies.map((item) => {
-                return item.component;
+                return <>{item.component}</>;
               })}
             </MotionVStack>
           )}
