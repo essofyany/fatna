@@ -6,15 +6,14 @@ import {
   AccordionPanel,
 } from "@chakra-ui/react";
 import { MinusIcon, AddIcon } from "@chakra-ui/icons";
-import { USD, EUR, YEN, PND, RUP } from "./Currencies";
+import { USD, EUR, YEN, PND, RUP, currencySelector } from "./Currencies";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
 
 function CurrencyMenuAccordion() {
   const currentCurrency = useSelector((state) => state.currency.current);
-  const currencies = useSelector((state) => state.currency.currencyList);
 
-  useEffect(() => {}, [currentCurrency.name]);
+  useEffect(() => {}, [currentCurrency]);
 
   return (
     <Accordion allowMultiple>
@@ -23,7 +22,7 @@ function CurrencyMenuAccordion() {
           <>
             <h2>
               <AccordionButton justifyContent="space-between">
-                {currentCurrency.component}
+                {currencySelector(currentCurrency).component}
                 {isExpanded ? (
                   <MinusIcon fontSize="12px" />
                 ) : (
@@ -33,9 +32,11 @@ function CurrencyMenuAccordion() {
             </h2>
             <AccordionPanel pb={4}>
               <VStack alignItems="start" spacing="2">
-                {currencies.map((item) => {
-                  return item.component;
-                })}
+                <USD />
+                <EUR />
+                <YEN />
+                <PND />
+                <RUP />
               </VStack>
             </AccordionPanel>
           </>

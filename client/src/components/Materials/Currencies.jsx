@@ -11,38 +11,55 @@ import {
 import { IoIosArrowDown } from "react-icons/io";
 import { changeCurrency } from "../../features/currencySlice";
 
-export const currencies = [
-  {
+export const currencies = {
+  USD: {
     name: "USD",
     selectedComponent: <USD key="USD" selected={true} />,
     currentCurrencyIcon: <USD key="USD" forProduct={true} />,
     component: <USD key="USD" />,
   },
-  {
+  EUR: {
     name: "EUR",
     selectedComponent: <EUR key="EUR" selected={true} />,
     currentCurrencyIcon: <EUR key="EUR" forProduct={true} />,
     component: <EUR key="EUR" />,
   },
-  {
+  YEN: {
     name: "YEN",
     selectedComponent: <YEN key="YEN" selected={true} />,
     currentCurrencyIcon: <YEN key="YEN" forProduct={true} />,
     component: <YEN key="YEN" />,
   },
-  {
+  PND: {
     name: "PND",
     selectedComponent: <PND key="PND" selected={true} />,
     currentCurrencyIcon: <PND key="PND" forProduct={true} />,
     component: <PND key="PND" />,
   },
-  {
+  RUP: {
     name: "RUP",
     selectedComponent: <RUP key="RUP" selected={true} />,
     currentCurrencyIcon: <RUP key="RUP" forProduct={true} />,
     component: <RUP key="RUP" />,
   },
-];
+};
+
+export function currencySelector(currencyName) {
+  switch (currencyName) {
+    case "USD":
+      return currencies[currencyName];
+    case "EUR":
+      return currencies[currencyName];
+    case "YEN":
+      return currencies[currencyName];
+    case "PND":
+      return currencies[currencyName];
+    case "RUP":
+      return currencies[currencyName];
+    default:
+      return currencies["USD"];
+  }
+}
 
 export function USD({ selected, forProduct = false }) {
   const dispatch = useDispatch();
@@ -59,7 +76,7 @@ export function USD({ selected, forProduct = false }) {
             alignItems="center"
             color={selected ? "white" : "black"}
             cursor="pointer"
-            onClick={() => dispatch(changeCurrency(currencies[0]))}
+            onClick={() => dispatch(changeCurrency("USD"))}
           >
             <HiCurrencyDollar size="22" />
             <Text px="1" fontWeight="medium">
@@ -88,7 +105,7 @@ export function EUR({ selected, forProduct = false }) {
             alignItems="center"
             color={selected ? "white" : "black"}
             cursor="pointer"
-            onClick={() => dispatch(changeCurrency(currencies[1]))}
+            onClick={() => dispatch(changeCurrency("EUR"))}
           >
             <HiCurrencyEuro size="22" />
             <Text px="1" fontWeight="medium">
@@ -101,6 +118,7 @@ export function EUR({ selected, forProduct = false }) {
     </>
   );
 }
+
 export function YEN({ selected, forProduct = false }) {
   const dispatch = useDispatch();
   return (
@@ -116,7 +134,7 @@ export function YEN({ selected, forProduct = false }) {
             alignItems="center"
             color={selected ? "white" : "black"}
             cursor="pointer"
-            onClick={() => dispatch(changeCurrency(currencies[2]))}
+            onClick={() => dispatch(changeCurrency("YEN"))}
           >
             <HiCurrencyYen size="22" />
             <Text px="1" fontWeight="medium">
@@ -129,6 +147,7 @@ export function YEN({ selected, forProduct = false }) {
     </>
   );
 }
+
 export function PND({ selected, forProduct = false }) {
   const dispatch = useDispatch();
   return (
@@ -144,7 +163,7 @@ export function PND({ selected, forProduct = false }) {
             alignItems="center"
             color={selected ? "white" : "black"}
             cursor="pointer"
-            onClick={() => dispatch(changeCurrency(currencies[3]))}
+            onClick={() => dispatch(changeCurrency("PND"))}
           >
             <HiCurrencyPound size="22" />
             <Text px="1" fontWeight="medium">
@@ -157,6 +176,7 @@ export function PND({ selected, forProduct = false }) {
     </>
   );
 }
+
 export function RUP({ selected, forProduct = false }) {
   const dispatch = useDispatch();
   return (
@@ -172,7 +192,7 @@ export function RUP({ selected, forProduct = false }) {
             alignItems="center"
             color={selected ? "white" : "black"}
             cursor="pointer"
-            onClick={() => dispatch(changeCurrency(currencies[4]))}
+            onClick={() => dispatch(changeCurrency("RUP"))}
           >
             <HiCurrencyRupee size="22" />
             <Text px="1" fontWeight="medium">

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Box } from "@chakra-ui/react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setView } from "../features/viewsSlice";
 
 function ViewIcons1({ selectedView, ...styles }) {

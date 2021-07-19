@@ -2,12 +2,10 @@ import { Box, Text } from "@chakra-ui/react";
 import { RiHeart2Fill, RiHeart2Line } from "react-icons/ri";
 import { useSelector } from "react-redux";
 import IconTap from "../Motions/IconTap";
-
+import { currencySelector } from "../Materials/Currencies";
 function ProductInfo({ setCardState, cardState }) {
-  const { currentCurrencyIcon } = useSelector(
-    (state) => state.currency.current
-  );
-  // console.log(currentCurrencyIcon);
+  const currentCurrency = useSelector((state) => state.currency.current);
+  console.log(currentCurrency);
   function handleHeart() {
     setCardState({ ...cardState, isHearted: !cardState.isHearted });
   }
@@ -26,9 +24,9 @@ function ProductInfo({ setCardState, cardState }) {
             justifyContent="center"
             alignItems="center"
             borderRadius="full"
-            mx='1'
+            mx="1"
           >
-            {currentCurrencyIcon}
+            {currencySelector(currentCurrency).currentCurrencyIcon}
           </Box>
         </Box>
         <IconTap onClick={handleHeart}>

@@ -1,6 +1,5 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { useRouter } from "next/router";
-import { useSelector, useDispatch } from "react-redux";
 import {
   Text,
   Box,
@@ -8,7 +7,6 @@ import {
   GridItem,
   Center,
   useBreakpointValue,
-  useBreakpoint,
   useDisclosure,
 } from "@chakra-ui/react";
 import ProductCard from "../../../components/ProductCard/ProductCard";
@@ -16,25 +14,18 @@ import Banner from "../../../components/Materials/Banner";
 import Filter from "../../../components/Materials/Filter";
 import SideMenu from "../../../components/Materials/SideMenu";
 import { WideView, MediumView, SmallView } from "../../../Icons/ViewIcons";
-import { setView } from "../../../features/viewsSlice";
 import { BiFilter, BiFilterAlt } from "react-icons/bi";
 import DynamicGrid from "../../../components/Materials/DynamicGrid";
 
 function ProductsList() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const filterBtnRef = useRef();
-  const dispatch = useDispatch();
   const currentView = useBreakpointValue({
     base: "small",
     sm: "small",
     md: "medium",
     lg: "large",
     xl: "large",
-  });
-  const gridTemplates = useBreakpointValue({
-    base: "repeat(2,1fr)",
-    md: "repeat(3,1fr)",
-    lg: "repeat(4,1fr)",
   });
 
   // console.log(views);
@@ -96,13 +87,11 @@ function ProductsList() {
         {/* Products list area */}
         <GridItem w="full" colSpan="4">
           <DynamicGrid>
-            {/* <Grid w="full" gap={4} templateColumns={gridTemplates}> */}
             {list.map((item) => (
               <GridItem colSpan="auto" key={item}>
                 <ProductCard />
               </GridItem>
             ))}
-            {/* </Grid> */}
           </DynamicGrid>
         </GridItem>
       </Grid>

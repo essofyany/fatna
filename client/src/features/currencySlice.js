@@ -1,11 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { currencies } from "../components/Materials/Currencies";
 
 const currencySlice = createSlice({
   name: "currency",
   initialState: {
-    current: currencies[0],
-    currencyList: currencies,
+    current: "USD",
+    currencyList: ["USD", "EUR", "YEN", "PND", "RUP"],
   },
   reducers: {
     changeCurrency: (state, action) => {

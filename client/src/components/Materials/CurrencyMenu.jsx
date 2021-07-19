@@ -2,21 +2,26 @@ import { useEffect, useState } from "react";
 import { Box, VStack } from "@chakra-ui/react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useSelector } from "react-redux";
-
+import {
+  USD,
+  EUR,
+  PND,
+  RUP,
+  YEN,
+  currencySelector,
+} from "../Materials/Currencies";
 const MotionVStack = motion(VStack);
 
 function CurrencyMenu() {
   const currentCurrency = useSelector((state) => state.currency.current);
-  const currencies = useSelector((state) => state.currency.currencyList);
   const [isExpanded, setIsExpanded] = useState(false);
-
   function handleClick() {
     setIsExpanded(!isExpanded);
   }
 
   useEffect(() => {
     setIsExpanded(false);
-  }, [currentCurrency.name]);
+  }, [currentCurrency]);
 
   return (
     <>
@@ -28,7 +33,8 @@ function CurrencyMenu() {
         color="white"
         cursor="pointer"
       >
-        {currentCurrency.selectedComponent}
+        {currencySelector(currentCurrency).selectedComponent}
+        {/* {currentCurrency.selectedComponent} */}
         {/* <USD selected={true} /> */}
       </Box>
       {/* currency menu */}
@@ -50,9 +56,11 @@ function CurrencyMenu() {
               py="3"
               w="32"
             >
-              {currencies.map((item) => {
-                return <>{item.component}</>;
-              })}
+              <USD />
+              <EUR />
+              <YEN />
+              <PND />
+              <RUP />
             </MotionVStack>
           )}
         </AnimatePresence>
