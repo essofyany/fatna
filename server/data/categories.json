@@ -1,80 +1,80 @@
 [
   {
     "id": "1",
-    "categoryName": "indie",
-    "imageUrl": "/assets/images/categories/asset 36.jpeg",
+    "categoryName": "tunics",
+    "imageUrl": "https://res.cloudinary.com/dumlhqdtb/image/upload/v1626950418/tunics_fuazwf.jpg",
     "itemsCount": 23
   },
   {
     "id": "2",
-    "categoryName": "y2k",
-    "imageUrl": "/assets/images/categories/asset 37.jpeg",
+    "categoryName": "blouses",
+    "imageUrl": "https://res.cloudinary.com/dumlhqdtb/image/upload/v1626949427/fatna/categories/blouses_xudnu7.jpg",
     "itemsCount": 23
   },
   {
     "id": "3",
-    "categoryName": "e-girl",
-    "imageUrl": "/assets/images/categories/asset 38.jpeg",
+    "categoryName": "skirts",
+    "imageUrl": "https://res.cloudinary.com/dumlhqdtb/image/upload/v1626949390/fatna/categories/skirts_cwmiky.jpg",
     "itemsCount": 23
   },
   {
     "id": "4",
-    "categoryName": "vsco",
-    "imageUrl": "/assets/images/categories/asset 39.jpeg",
+    "categoryName": "top",
+    "imageUrl": "https://res.cloudinary.com/dumlhqdtb/image/upload/v1626949365/fatna/categories/top_ioonk2.jpg",
     "itemsCount": 23
   },
   {
     "id": "5",
     "categoryName": "dresses",
-    "imageUrl": "/assets/images/categories/asset 45.jpeg",
+    "imageUrl": "https://res.cloudinary.com/dumlhqdtb/image/upload/v1626949564/fatna/categories/dresses_ys2ksg.jpg",
     "itemsCount": 23
   },
   {
     "id": "6",
     "categoryName": "shorts",
-    "imageUrl": "/assets/images/categories/asset 46.jpeg",
+    "imageUrl": "https://res.cloudinary.com/dumlhqdtb/image/upload/v1626949431/fatna/categories/shorts2_g3oppt.jpg",
     "itemsCount": 23
   },
   {
     "id": "7",
     "categoryName": "shirts",
-    "imageUrl": "/assets/images/categories/asset 47.jpeg",
+    "imageUrl": "https://res.cloudinary.com/dumlhqdtb/image/upload/v1626949308/fatna/categories/shirts_hlr2tm.jpg",
     "itemsCount": 23
   },
   {
     "id": "8",
     "categoryName": "pants",
-    "imageUrl": "/assets/images/categories/asset 48.jpeg",
+    "imageUrl": "https://res.cloudinary.com/dumlhqdtb/image/upload/v1626949333/fatna/categories/pants_u0fdsq.jpg",
     "itemsCount": 23
   },
   {
     "id": "9",
     "categoryName": "glasses",
-    "imageUrl": "/assets/images/categories/asset 49.jpeg",
+    "imageUrl": "https://res.cloudinary.com/dumlhqdtb/image/upload/v1626949871/fatna/categories/glasses_wygiox.jpg",
     "itemsCount": 23
   },
   {
     "id": "10",
-    "categoryName": "bags",
-    "imageUrl": "/assets/images/categories/asset 50.jpeg",
+    "categoryName": "handbag",
+    "imageUrl": "https://res.cloudinary.com/dumlhqdtb/image/upload/v1626949873/fatna/categories/bags_wgjdtj.jpg",
     "itemsCount": 23
   },
   {
     "id": "11",
-    "categoryName": "necklaces",
-    "imageUrl": "/assets/images/categories/asset 51.jpeg",
+    "categoryName": "hats",
+    "imageUrl": "https://res.cloudinary.com/dumlhqdtb/image/upload/v1626949894/fatna/categories/hats_pdtnxa.jpg",
     "itemsCount": 23
   },
   {
     "id": "12",
-    "categoryName": "phone cases",
-    "imageUrl": "/assets/images/categories/asset 52.jpeg",
+    "categoryName": "jewelry",
+    "imageUrl": "https://res.cloudinary.com/dumlhqdtb/image/upload/v1626949844/fatna/categories/jewelry_me6s5v.jpg",
     "itemsCount": 23
   },
   {
     "id": "13",
     "categoryName": "shoes",
-    "imageUrl": "/assets/images/categories/asset 53.jpeg",
+    "imageUrl": "https://res.cloudinary.com/dumlhqdtb/image/upload/v1626949334/fatna/categories/shoes_ylgy5r.jpg",
     "itemsCount": 23
   }
 ]

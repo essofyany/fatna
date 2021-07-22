@@ -18,8 +18,12 @@ const ProductSchema = new mongoose.Schema({
   category: {
     type: String,
     required: [true, "please enter product category"],
+  },
+  gender: {
+    type: String,
+    required: [true, "please enter product category"],
     enum: {
-      values: ["women", "men", "kids", "beauty", "accessories"],
+      values: ["women", "men", "kids"],
       message: "please select a category",
     },
   },

@@ -1,48 +1,420 @@
 [
   {
-    "name": "ezzzy",
-    "description": "grey ezzzy form italy",
-    "price": 21,
-    "seller": "bilal",
-    "category": "men",
-    "ratings": "32",
+    "name": "Polka Dot Crop Top",
+    "description": "Spot In My Heart Polka Dot Crop Top",
+    "price": 28,
+    "seller": "fatna",
+    "category": "tops",
+    "gender": "women",
+    "ratings": "0",
     "images": [
       {
         "public_id": "1",
-        "url": "https://res.cloudinary.com/dumlhqdtb/image/upload/v1616329021/sickfits/60573937da91b52218603a18.webp"
-      }
-    ],
-    "stock": 231,
-    "numberOfReviews": 21,
-    "reviews": [
-      {
-        "name": "imane",
-        "rating": 5,
-        "comment": "prefect ezzzy"
-      }
-    ]
-  },
-  {
-    "name": "zoom",
-    "description": "grey zoom form france",
-    "price": 21,
-    "seller": "imane",
-    "category": "women",
-    "ratings": "21",
-    "images": [
+        "url": "https://res.cloudinary.com/dumlhqdtb/image/upload/v1626810650/fatna/Spot_In_My_Heart_Polka_Dot_Crop_Top_ju4loa.jpg"
+      },
       {
         "public_id": "2",
-        "url": "https://res.cloudinary.com/dumlhqdtb/image/upload/v1616329021/sickfits/60573937da91b52218603a18.webp"
+        "url": "https://res.cloudinary.com/dumlhqdtb/image/upload/v1626810650/fatna/Spot_In_My_Heart_Polka_Dot_Crop_Top_2_kuwnrq.jpg"
       }
     ],
-    "stock": 21,
-    "numberOfReviews": 21,
-    "reviews": [
+    "stock": 20,
+    "numberOfReviews": 0,
+    "reviews": []
+  },
+  {
+    "name": "cute tank top",
+    "description": "Forever And Always Tank",
+    "price": 29.99,
+    "seller": "fatna",
+    "category": "tops",
+    "gender": "women",
+    "ratings": "0",
+    "images": [
       {
-        "name": "bilal",
-        "rating": 4,
-        "comment": "nice zoom"
+        "public_id": "1",
+        "url": "https://res.cloudinary.com/dumlhqdtb/image/upload/v1626810657/fatna/Forever_And_Always_Ruffled_Tank_fgvomb.jpg"
+      },
+      {
+        "public_id": "2",
+        "url": "https://res.cloudinary.com/dumlhqdtb/image/upload/v1626810651/fatna/Forever_And_Always_Ruffled_Tank_2_tggstd.jpg"
       }
-    ]
+    ],
+    "stock": 25,
+    "numberOfReviews": 0,
+    "reviews": []
+  },
+  {
+    "name": "Stripe Blouse",
+    "description": "Just My Stripe Blouse",
+    "price": 29.99,
+    "seller": "fatna",
+    "category": "tops",
+    "gender": "women",
+    "ratings": "0",
+    "images": [
+      {
+        "public_id": "1",
+        "url": "https://res.cloudinary.com/dumlhqdtb/image/upload/v1626810652/fatna/Just_My_Stripe_Blouse_dkmdlg.jpg"
+      },
+      {
+        "public_id": "2",
+        "url": "https://res.cloudinary.com/dumlhqdtb/image/upload/v1626810652/fatna/Just_My_Stripe_Blouse_2_emdlsz.jpg"
+      }
+    ],
+    "stock": 25,
+    "numberOfReviews": 0,
+    "reviews": []
+  },
+  {
+    "name": "Wide Leg Pants",
+    "description": "Grab Your Passport Wide Pants",
+    "price": 42,
+    "seller": "fatna",
+    "category": "pants",
+    "gender": "women",
+    "ratings": "0",
+    "images": [
+      {
+        "public_id": "1",
+        "url": "https://res.cloudinary.com/dumlhqdtb/image/upload/v1626810652/fatna/Grab_Your_Passport_Wide_Leg_Pants_hzmiyf.jpg"
+      },
+      {
+        "public_id": "2",
+        "url": "https://res.cloudinary.com/dumlhqdtb/image/upload/v1626810652/fatna/Grab_Your_Passport_Wide_Leg_Pants_2_shzzva.jpg"
+      }
+    ],
+    "stock": 15,
+    "numberOfReviews": 0,
+    "reviews": []
+  },
+  {
+    "name": "Ruffled Tank",
+    "description": "Forever And Always Ruffled Tank - Black",
+    "price": 29.99,
+    "seller": "fatna",
+    "category": "tops",
+    "gender": "women",
+    "ratings": "0",
+    "images": [
+      {
+        "public_id": "1",
+        "url": "https://res.cloudinary.com/dumlhqdtb/image/upload/v1626810652/fatna/Forever_And_Always_Ruffled_Tank_s1qbry.jpg"
+      },
+      {
+        "public_id": "2",
+        "url": "https://res.cloudinary.com/dumlhqdtb/image/upload/v1626810651/fatna/Forever_And_Always_Ruffled_Tank_2_gcs07e.jpg"
+      }
+    ],
+    "stock": 10,
+    "numberOfReviews": 0,
+    "reviews": []
+  },
+  {
+    "name": "Linen Midi Dress",
+    "description": "Divine Darling Crinkle Linen Midi Dress",
+    "price": 56,
+    "seller": "fatna",
+    "category": "dresses",
+    "gender": "women",
+    "ratings": "0",
+    "images": [
+      {
+        "public_id": "1",
+        "url": "https://res.cloudinary.com/dumlhqdtb/image/upload/v1626810651/fatna/Divine_Darling_Crinkle_Linen_Midi_Dress_nevw5d.jpg"
+      },
+      {
+        "public_id": "2",
+        "url": "https://res.cloudinary.com/dumlhqdtb/image/upload/v1626810650/fatna/Divine_Darling_Crinkle_Linen_Midi_Dress_2_bj8hyn.jpg"
+      }
+    ],
+    "stock": 20,
+    "numberOfReviews": 0,
+    "reviews": []
+  },
+  {
+    "name": "Crochet Top",
+    "description": "Sweet Escape Crochet Top",
+    "price": 36,
+    "seller": "fatna",
+    "category": "tops",
+    "gender": "women",
+    "ratings": "0",
+    "images": [
+      {
+        "public_id": "1",
+        "url": "https://res.cloudinary.com/dumlhqdtb/image/upload/v1626810651/fatna/Sweet_Escape_Crochet_Top_atzrex.jpg"
+      },
+      {
+        "public_id": "2",
+        "url": "https://res.cloudinary.com/dumlhqdtb/image/upload/v1626810651/fatna/Sweet_Escape_Crochet_Top_2_ztqnm5.jpg"
+      }
+    ],
+    "stock": 20,
+    "numberOfReviews": 0,
+    "reviews": []
+  },
+  {
+    "name": "Crochet Knit Top",
+    "description": "Bonfire Nights Crochet Knit Top",
+    "price": 24,
+    "seller": "fatna",
+    "category": "tops",
+    "gender": "women",
+    "ratings": "0",
+    "images": [
+      {
+        "public_id": "1",
+        "url": "https://res.cloudinary.com/dumlhqdtb/image/upload/v1626810651/fatna/Sweet_Escape_Crochet_Top_atzrex.jpg"
+      },
+      {
+        "public_id": "2",
+        "url": "https://res.cloudinary.com/dumlhqdtb/image/upload/v1626810651/fatna/Sweet_Escape_Crochet_Top_2_ztqnm5.jpg"
+      }
+    ],
+    "stock": 25,
+    "numberOfReviews": 0,
+    "reviews": []
+  },
+  {
+    "name": "Distressed Denim Shorts",
+    "description": "Cara Distressed Denim Shorts",
+    "price": 36,
+    "seller": "fatna",
+    "category": "shorts",
+    "gender": "women",
+    "ratings": "0",
+    "images": [
+      {
+        "public_id": "1",
+        "url": "https://res.cloudinary.com/dumlhqdtb/image/upload/v1626810650/fatna/Cara_Distressed_Denim_Shorts_wbmevo.jpg"
+      },
+      {
+        "public_id": "2",
+        "url": "https://res.cloudinary.com/dumlhqdtb/image/upload/v1626810650/fatna/Cara_Distressed_Denim_Shorts_2_ftoom8.jpg"
+      }
+    ],
+    "stock": 25,
+    "numberOfReviews": 0,
+    "reviews": []
+  },
+  {
+    "name": "Polka Dot Mini Skirt",
+    "description": "Spot In My Heart Polka Dot Mini Skirt",
+    "price": 32,
+    "seller": "fatna",
+    "category": "Skirts",
+    "gender": "women",
+    "ratings": "0",
+    "images": [
+      {
+        "public_id": "1",
+        "url": "https://res.cloudinary.com/dumlhqdtb/image/upload/v1626810650/fatna/Spot_In_My_Heart_Polka_Dot_Mini_Skirt_bc99wg.jpg"
+      },
+      {
+        "public_id": "2",
+        "url": "https://res.cloudinary.com/dumlhqdtb/image/upload/v1626810650/fatna/Spot_In_My_Heart_Polka_Dot_Mini_Skirt_2_jjhox2.jpg"
+      }
+    ],
+    "stock": 35,
+    "numberOfReviews": 0,
+    "reviews": []
+  },
+  {
+    "name": "Muscle Bodysuit",
+    "description": "Brianna Muscle Bodysuit",
+    "price": 26,
+    "seller": "fatna",
+    "category": "bodysuits",
+    "gender": "women",
+    "ratings": "0",
+    "images": [
+      {
+        "public_id": "1",
+        "url": "https://res.cloudinary.com/dumlhqdtb/image/upload/v1626810649/fatna/Brianna_Muscle_Bodysuit_fwr7tk.jpg"
+      },
+      {
+        "public_id": "2",
+        "url": "https://res.cloudinary.com/dumlhqdtb/image/upload/v1626810649/fatna/Brianna_Muscle_Bodysuit_2_dizb5s.jpg"
+      }
+    ],
+    "stock": 35,
+    "numberOfReviews": 0,
+    "reviews": []
+  },
+  {
+    "name": "Tiered Mini Dress",
+    "description": "Save Your Love Tiered Mini Dress",
+    "price": 38,
+    "seller": "fatna",
+    "category": "dresses",
+    "gender": "women",
+    "ratings": "0",
+    "images": [
+      {
+        "public_id": "1",
+        "url": "https://res.cloudinary.com/dumlhqdtb/image/upload/v1626810649/fatna/Save_Your_Love_Tiered_Mini_Dress_zqjxma.jpg"
+      },
+      {
+        "public_id": "2",
+        "url": "https://res.cloudinary.com/dumlhqdtb/image/upload/v1626810649/fatna/Save_Your_Love_Tiered_Mini_Dress_2_cmhd0a.jpg"
+      }
+    ],
+    "stock": 15,
+    "numberOfReviews": 0,
+    "reviews": []
+  },
+  {
+    "name": "Tie-Front Blouse",
+    "description": "Boho Breeze Tie-Front Blouse",
+    "price": 44,
+    "seller": "fatna",
+    "category": "tops",
+    "gender": "women",
+    "ratings": "0",
+    "images": [
+      {
+        "public_id": "1",
+        "url": "https://res.cloudinary.com/dumlhqdtb/image/upload/v1626810648/fatna/Boho_Breeze_Tie-Front_Blouse_ecbavr.jpg"
+      },
+      {
+        "public_id": "2",
+        "url": "https://res.cloudinary.com/dumlhqdtb/image/upload/v1626810649/fatna/Boho_Breeze_Tie-Front_Blouse_2_iueya3.jpg"
+      }
+    ],
+    "stock": 15,
+    "numberOfReviews": 0,
+    "reviews": []
+  },
+  {
+    "name": "Ruched Dress",
+    "description": "Not Just A Crush Ruched Dress - Sage",
+    "price": 29.99,
+    "seller": "fatna",
+    "category": "dresses",
+    "gender": "women",
+    "ratings": "0",
+    "images": [
+      {
+        "public_id": "1",
+        "url": "https://res.cloudinary.com/dumlhqdtb/image/upload/v1626810648/fatna/Not_Just_A_Crush_Ruched_Dress_mzdozp.jpg"
+      },
+      {
+        "public_id": "2",
+        "url": "https://res.cloudinary.com/dumlhqdtb/image/upload/v1626810648/fatna/Not_Just_A_Crush_Ruched_Dress_2_z6zib0.jpg"
+      }
+    ],
+    "stock": 45,
+    "numberOfReviews": 0,
+    "reviews": []
+  },
+  {
+    "name": "Wide Leg Pants",
+    "description": "On My Mind Polka Dot Wide Leg",
+    "price": 38,
+    "seller": "fatna",
+    "category": "pants",
+    "gender": "women",
+    "ratings": "0",
+    "images": [
+      {
+        "public_id": "1",
+        "url": "https://res.cloudinary.com/dumlhqdtb/image/upload/v1626810649/fatna/On_My_Mind_Polka_Dot_Wide_Leg_Pants_ra9ccf.jpg"
+      },
+      {
+        "public_id": "2",
+        "url": "https://res.cloudinary.com/dumlhqdtb/image/upload/v1626810648/fatna/On_My_Mind_Polka_Dot_Wide_Leg_Pants_2_mqxr5b.jpg"
+      }
+    ],
+    "stock": 45,
+    "numberOfReviews": 0,
+    "reviews": []
+  },
+  {
+    "name": "Frayed Denim Shorts",
+    "description": "Madelyn Frayed Denim Shorts",
+    "price": 36,
+    "seller": "fatna",
+    "category": "shorts",
+    "gender": "women",
+    "ratings": "0",
+    "images": [
+      {
+        "public_id": "1",
+        "url": "https://res.cloudinary.com/dumlhqdtb/image/upload/v1626810648/fatna/Madelyn_Frayed_Denim_Shorts_azvzax.jpg"
+      },
+      {
+        "public_id": "2",
+        "url": "https://res.cloudinary.com/dumlhqdtb/image/upload/v1626810648/fatna/Madelyn_Frayed_Denim_Shorts_2_p5yyvl.jpg"
+      }
+    ],
+    "stock": 45,
+    "numberOfReviews": 0,
+    "reviews": []
+  },
+  {
+    "name": "Floral Babydoll Dress",
+    "description": "Beautiful Blooms Floral Babydoll",
+    "price": 38,
+    "seller": "fatna",
+    "category": "dresses",
+    "gender": "women",
+    "ratings": "0",
+    "images": [
+      {
+        "public_id": "1",
+        "url": "https://res.cloudinary.com/dumlhqdtb/image/upload/v1626810647/fatna/Beautiful_Blooms_Floral_Babydoll_Dress_reu8it.jpg"
+      },
+      {
+        "public_id": "2",
+        "url": "https://res.cloudinary.com/dumlhqdtb/image/upload/v1626810648/fatna/Beautiful_Blooms_Floral_Babydoll_Dress_2_yyvl07.jpg"
+      }
+    ],
+    "stock": 45,
+    "numberOfReviews": 0,
+    "reviews": []
+  },
+  {
+    "name": "Linen Midi Dress",
+    "description": "True Love Linen Midi Dress",
+    "price": 42,
+    "seller": "fatna",
+    "category": "dresses",
+    "gender": "women",
+    "ratings": "0",
+    "images": [
+      {
+        "public_id": "1",
+        "url": "https://res.cloudinary.com/dumlhqdtb/image/upload/v1626810647/fatna/True_Love_Linen_Midi_Dress_lpg5ru.jpg"
+      },
+      {
+        "public_id": "2",
+        "url": "https://res.cloudinary.com/dumlhqdtb/image/upload/v1626810647/fatna/True_Love_Linen_Midi_Dress_2_airfzx.jpg"
+      }
+    ],
+    "stock": 10,
+    "numberOfReviews": 0,
+    "reviews": []
+  },
+  {
+    "name": "Linen Top",
+    "description": "Made My Day Linen Top - White",
+    "price": 28,
+    "seller": "fatna",
+    "category": "tops",
+    "gender": "women",
+    "ratings": "0",
+    "images": [
+      {
+        "public_id": "1",
+        "url": "https://res.cloudinary.com/dumlhqdtb/image/upload/v1626810647/fatna/Made_My_Day_Linen_Top_aak2aa.jpg"
+      },
+      {
+        "public_id": "2",
+        "url": "https://res.cloudinary.com/dumlhqdtb/image/upload/v1626810647/fatna/Made_My_Day_Linen_Top_2_yh2ksx.jpg"
+      }
+    ],
+    "stock": 10,
+    "numberOfReviews": 0,
+    "reviews": []
   }
 ]
