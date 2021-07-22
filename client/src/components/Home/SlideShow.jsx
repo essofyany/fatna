@@ -5,7 +5,7 @@ import SwiperCore, { Navigation, Pagination, Autoplay } from "swiper/core";
 
 SwiperCore.use([Pagination, Navigation, Autoplay]);
 
-function SlideShow() {
+function SlideShow({ products, index = 0 }) {
   const slidesPerView = useBreakpointValue({
     base: 2,
     sm: 3,
@@ -39,24 +39,11 @@ function SlideShow() {
       autoplay={{ delay: 3000 }}
       style={{ paddingBottom: isLarge ? "50px" : "10px" }}
     >
-      <SwiperSlide>
-        <ProductCard />
-      </SwiperSlide>
-      <SwiperSlide>
-        <ProductCard />
-      </SwiperSlide>
-      <SwiperSlide>
-        <ProductCard />
-      </SwiperSlide>
-      <SwiperSlide>
-        <ProductCard />
-      </SwiperSlide>
-      <SwiperSlide>
-        <ProductCard />
-      </SwiperSlide>
-      <SwiperSlide>
-        <ProductCard />
-      </SwiperSlide>
+      {products.slice(index, index + 7).map((product) => (
+        <SwiperSlide>
+          <ProductCard product={product} />
+        </SwiperSlide>
+      ))}
     </Swiper>
   );
 }

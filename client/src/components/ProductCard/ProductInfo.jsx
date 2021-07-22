@@ -3,7 +3,9 @@ import { RiHeart2Fill, RiHeart2Line } from "react-icons/ri";
 import { useSelector } from "react-redux";
 import IconTap from "../Motions/IconTap";
 import { currencySelector } from "../Materials/Currencies";
-function ProductInfo({ setCardState, cardState }) {
+
+function ProductInfo({ productInfo, setCardState, cardState }) {
+  const { price, name } = productInfo;
   const currentCurrency = useSelector((state) => state.currency.current);
   function handleHeart() {
     setCardState({ ...cardState, isHearted: !cardState.isHearted });
@@ -14,7 +16,7 @@ function ProductInfo({ setCardState, cardState }) {
       <Box d="flex" alignItems="center" justifyContent="space-between">
         <Box d="flex" alignItems="center">
           <Text fontSize={{ base: "md", md: "lg" }} fontWeight="bold">
-            63
+            {price}
           </Text>
           <Box
             bg="black"
@@ -41,7 +43,7 @@ function ProductInfo({ setCardState, cardState }) {
         textTransform="lowerCase"
         fontWeight="semibold"
       >
-        VSCO AESTHETIC SKINNY HIGH WAIST PANTS
+        {name}
       </Text>
     </Box>
   );

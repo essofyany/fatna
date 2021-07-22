@@ -18,7 +18,8 @@ import { BiFilterAlt } from "react-icons/bi";
 import DynamicGrid from "../../../components/Materials/DynamicGrid";
 import SortMenu from "../../../components/Materials/SortMenu";
 
-function ProductsList() {
+function ProductsList({ products }) {
+  console.log("products: ", products);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const filterBtnRef = useRef();
   const currentView = useBreakpointValue({
@@ -45,8 +46,9 @@ function ProductsList() {
       >
         {/* filter */}
         <Box d="flex" alignItems="center" w="33%" p="3">
-          <BiFilterAlt size="21" />
+          <BiFilterAlt size="21" onClick={onOpen} />
           <Text
+            display={{ base: "none", sm: "initial" }}
             cursor="pointer"
             ml="2"
             fontSize="lg"
@@ -88,9 +90,9 @@ function ProductsList() {
         {/* Products list area */}
         <GridItem w="full" colSpan="4">
           <DynamicGrid>
-            {list.map((item) => (
-              <GridItem colSpan="auto" key={item}>
-                <ProductCard />
+            {products.map((product) => (
+              <GridItem colSpan="auto" key={product._id}>
+                <ProductCard product={product} />
               </GridItem>
             ))}
           </DynamicGrid>
@@ -107,6 +109,16 @@ function ProductsList() {
       </SideMenu>
     </>
   );
+}
+
+export async function getServerSideProps(ctx) {
+  const res = await fetch("http://localhost:5000/api/product");
+  const data = await res.json();
+  return {
+    props: {
+      products: data.products,
+    },
+  };
 }
 
 export default ProductsList;

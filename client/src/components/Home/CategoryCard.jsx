@@ -4,6 +4,7 @@ import { Box, Text, Image } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 
 const MotionText = motion(Text);
+const MotionImage = motion(Image);
 
 function CategoryCard({ category, ...styles }) {
   const { id, categoryName, imageUrl, itemsCount } = category;
@@ -17,8 +18,13 @@ function CategoryCard({ category, ...styles }) {
         justifyContent="center"
         alignItems="center"
         cursor="pointer"
+        overflow="hidden"
       >
-        <Image
+        <MotionImage
+          whileHover={{
+            scale: 1.2,
+            transition: { duration: 0.7 },
+          }}
           src={imageUrl}
           w="full"
           h="full"
@@ -37,7 +43,7 @@ function CategoryCard({ category, ...styles }) {
           p="1"
           color="white"
           textTransform="uppercase"
-          whileHover={{ scale: 1.15, derution: 3000 }}
+          // whileHover={{ scale: 1.15, derution: 3000 }}
           {...styles}
         >
           {categoryName}

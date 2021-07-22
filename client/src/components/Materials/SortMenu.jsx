@@ -39,7 +39,7 @@ const sortList = {
     name: "Alphabetically",
     selectedComponent: (
       <Text ml="2" fontSize="lg" fontWeight="medium">
-        Alphabetically: A-Z
+        Alphabetically
       </Text>
     ),
     component: (
@@ -147,7 +147,9 @@ function SortMenu() {
         onClick={handleClick}
       >
         <BiFilter size="24" />
-        {sortSwitch(currentSort).selectedComponent}
+        <Box display={{ base: "none", sm: "initial" }}>
+          {sortSwitch(currentSort).selectedComponent}
+        </Box>
       </Box>
       {/* currency menu */}
       <Box pos="relative">

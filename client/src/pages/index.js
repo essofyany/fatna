@@ -10,7 +10,7 @@ import Banner from "../components/Materials/Banner";
 import CategoryGrid from "../components/Home/CategoryGrid";
 import { getCategories } from "../features/categorySlice";
 
-const HomePage = ({ categories }) => {
+const HomePage = ({ categories, products }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -33,7 +33,7 @@ const HomePage = ({ categories }) => {
       />
 
       <Box w="full" wd={{ base: "inline", lg: "none" }}>
-        <SlideShow />
+        <SlideShow products={products} />
       </Box>
 
       <Center my="5">
@@ -58,7 +58,7 @@ const HomePage = ({ categories }) => {
       />
 
       <Box w="full" wd={{ base: "inline", lg: "none" }}>
-        <SlideShow />
+        <SlideShow products={products} index={9} />
       </Box>
 
       <Center my="5">
@@ -98,12 +98,15 @@ const HomePage = ({ categories }) => {
 };
 
 export async function getStaticProps(context) {
-  const res = await fetch("http://localhost:5000/api/categories");
-  const data = await res.json();
+  const productsRes = await fetch("http://localhost:5000/api/product");
+  const productsData = await productsRes.json();
+  const categoryRes = await fetch("http://localhost:5000/api/categories");
+  const categoriesData = await categoryRes.json();
   // console.log(data);
   return {
     props: {
-      categories: data.categories,
+      categories: categoriesData.categories,
+      products: productsData.products,
     },
   };
 }

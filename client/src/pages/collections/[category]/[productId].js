@@ -1,9 +1,9 @@
-import { Box, Heading, Text, Wrap, WrapItem } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 
 function productPage() {
   return (
-    <Box bg="black" color="white">
-      <Heading>productPage</Heading>
+    <Box>
+      <Text>Single Product Page</Text>
     </Box>
   );
 }
