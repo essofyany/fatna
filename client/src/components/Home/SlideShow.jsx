@@ -39,9 +39,9 @@ function SlideShow({ products, index = 0 }) {
       autoplay={{ delay: 3000 }}
       style={{ paddingBottom: isLarge ? "50px" : "10px" }}
     >
-      {products.slice(index, index + 7).map((product) => (
-        <SwiperSlide>
-          <ProductCard product={product} />
+      {products.slice(index, index + 7).map((product, indx) => (
+        <SwiperSlide key={indx}>
+          <ProductCard key={product.id} product={product} />
         </SwiperSlide>
       ))}
     </Swiper>

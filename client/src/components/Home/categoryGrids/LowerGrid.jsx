@@ -9,7 +9,7 @@ function LowerGrid({ categories }) {
   return (
     <>
       {sizes.includes(breakpiont) ? (
-        <Grid w="full" gap={4} templateColumns="repeat(4, 1fr)">
+        <Grid w="full" gap={5} templateColumns="repeat(4, 1fr)">
           <GridItem colSpan="1">
             <Grid gap={4} templateRows="repeat(2, 1fr)">
               {categories.slice(0, 2).map((item, idx) => (
@@ -39,7 +39,7 @@ function LowerGrid({ categories }) {
         </Grid>
       ) : (
         <>
-          <Grid gap={4} templateColumns="repeat(2, 1fr)">
+          <Grid gap={5} templateColumns="repeat(2, 1fr)">
             {categories.slice(0, 2).map((item, idx) => (
               <GridItem key={idx} rowSpan="auto">
                 <CategoryCard
@@ -53,7 +53,7 @@ function LowerGrid({ categories }) {
             fontSize={{ base: "2xl", sm: "6xl" }}
             category={categories[2]}
           />
-          <Grid gap={4} templateColumns="repeat(2, 1fr)">
+          <Grid gap={5} templateColumns="repeat(2, 1fr)">
             {categories.slice(3, 5).map((item, idx) => (
               <GridItem key={idx} rowSpan="auto">
                 <CategoryCard

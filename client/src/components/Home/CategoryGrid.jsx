@@ -5,7 +5,7 @@ import LowerGrid from "./categoryGrids/LowerGrid";
 
 function CategoryGrid({ categories, banner1, banner2 }) {
   return (
-    <VStack my="5" w="full" spacing="5">
+    <VStack my="5" w="full" spacing="7">
       {/*  row 1 */}
       <UpperGrid categories={categories.slice(0, 4)} />
       {banner1}

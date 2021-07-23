@@ -1,24 +1,15 @@
 import Link from "next/link";
 import { useRef } from "react";
-import {
-  Box,
-  Text,
-  Heading,
-  VStack,
-  Grid,
-  GridItem,
-  useDisclosure,
-} from "@chakra-ui/react";
+import { Box, Heading, VStack, useDisclosure } from "@chakra-ui/react";
 import { RiHeart3Line, RiSearchLine } from "react-icons/ri";
 import { BiUser } from "react-icons/bi";
 import { FiShoppingCart } from "react-icons/fi";
 import { HiOutlineMenuAlt1 } from "react-icons/hi";
 import IconTap from "../Motions/IconTap";
-import NavigationList from "./NavigationList";
-import SocialIconsStack from "../Materials/SocialIconsStack";
-import CurrencyMenu from "../Materials/CurrencyMenu";
 import SideMenu from "../Materials/SideMenu";
 import SmilerAssistant from "../Materials/SmilerAssistant";
+import NavigationItem from "./NavigationItem";
+import SubHeader from "./SubHeader";
 
 function Header() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -36,36 +27,7 @@ function Header() {
         spacing="0"
       >
         {/* Sub Header */}
-        <Grid
-          w="full"
-          templateColumns={{ base: '"repeat(1, 1fr)"', lg: "repeat(4, 1fr)" }}
-          gap={5}
-          px="5"
-          py="3"
-          alignItems="center"
-        >
-          <GridItem colSpan="1" d={{ base: "none", lg: "inline" }}>
-            <SocialIconsStack />
-          </GridItem>
-          <GridItem colSpan="2">
-            <Text
-              textTransform="uppercase"
-              color="white"
-              zIndex="modal"
-              fontSize={{ base: "sm", lg: "md" }}
-              textAlign="center"
-            >
-              free shipping worldwide
-            </Text>
-          </GridItem>
-          <GridItem
-            colSpan="1"
-            justifySelf="end"
-            d={{ base: "none", lg: "inline" }}
-          >
-            <CurrencyMenu />
-          </GridItem>
-        </Grid>
+        <SubHeader />
 
         {/* Main Header */}
         <Box
@@ -114,8 +76,11 @@ function Header() {
             d={{ base: "none", lg: "flex" }}
             flex="auto"
             justifyContent="center"
+            alignItems="center"
           >
-            <NavigationList navList={navList} />
+            {navList.map((item) => (
+              <NavigationItem key={item} item={item} />
+            ))}
           </Box>
 
           {/* Icons on large screen */}

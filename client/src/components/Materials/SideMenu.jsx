@@ -12,8 +12,8 @@ import {
   Text,
 } from "@chakra-ui/react";
 import Btn from "./Btn";
-import NavigationList from "../Layout/NavigationList";
 import CurrencyMenuAccordion from "../Materials/CurrencyMenuAccordion";
+import NavigationItem from "../Layout/NavigationItem";
 
 function SideMenu({
   navList = [
@@ -84,13 +84,17 @@ function SideMenu({
         <DrawerBody p="4" overflow="scroll">
           {navList ? (
             <>
-              <NavigationList
-                navList={navList}
-                p="3"
-                borderBottom="0.5px lightGrey solid"
-                textTransform="capitalize"
-                onClick={onClose}
-              />
+              {navList.map((item) => (
+                <NavigationItem
+                  key={item}
+                  item={item}
+                  p="3"
+                  borderBottom="0.5px lightGrey solid"
+                  textTransform="capitalize"
+                  onClick={onClose}
+                />
+              ))}
+
               <CurrencyMenuAccordion />
             </>
           ) : (
