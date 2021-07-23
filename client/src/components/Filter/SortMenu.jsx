@@ -18,7 +18,7 @@ const sortList = {
     ),
     component: (
       <TextTap _hover={{ color: "black", fontWeight: "medium" }}>
-        <Text>Featured</Text>
+        Featured
       </TextTap>
     ),
   },
@@ -31,7 +31,7 @@ const sortList = {
     ),
     component: (
       <TextTap _hover={{ color: "black", fontWeight: "medium" }}>
-        <Text>Best selling</Text>
+        Best selling
       </TextTap>
     ),
   },
@@ -44,7 +44,7 @@ const sortList = {
     ),
     component: (
       <TextTap _hover={{ color: "black", fontWeight: "medium" }}>
-        <Text>Alphabetically</Text>
+        Alphabetically
       </TextTap>
     ),
   },
@@ -57,7 +57,7 @@ const sortList = {
     ),
     component: (
       <TextTap _hover={{ color: "black", fontWeight: "medium" }}>
-        <Text>Price: high to low</Text>
+        Price: high to low
       </TextTap>
     ),
   },
@@ -70,7 +70,7 @@ const sortList = {
     ),
     component: (
       <TextTap _hover={{ color: "black", fontWeight: "medium" }}>
-        <Text>Price: low to high</Text>
+        Price: low to high
       </TextTap>
     ),
   },
@@ -83,7 +83,7 @@ const sortList = {
     ),
     component: (
       <TextTap _hover={{ color: "black", fontWeight: "medium" }}>
-        <Text>Date: new to old</Text>
+        Date: new to old
       </TextTap>
     ),
   },
@@ -96,7 +96,7 @@ const sortList = {
     ),
     component: (
       <TextTap _hover={{ color: "black", fontWeight: "medium" }}>
-        <Text>Date: old to new</Text>
+        Date: old to new
       </TextTap>
     ),
   },
@@ -126,7 +126,6 @@ function sortSwitch(sortBy) {
 function SortMenu() {
   const dispatch = useDispatch();
   const currentSort = useSelector((state) => state.sortMenu.current);
-  console.log("sortMenu", currentSort);
 
   const [isExpanded, setIsExpanded] = useState(false);
   function handleClick() {
@@ -181,7 +180,7 @@ function SortMenu() {
                 }}
                 _hover={{ color: "black", fontWeight: "medium" }}
               >
-                <Text>Featured</Text>
+                Featured
               </TextTap>
               <TextTap
                 onClick={() => {
@@ -190,7 +189,7 @@ function SortMenu() {
                 }}
                 _hover={{ color: "black", fontWeight: "medium" }}
               >
-                <Text>Best selling</Text>
+                Best selling
               </TextTap>
               <TextTap
                 onClick={() => {
@@ -199,7 +198,7 @@ function SortMenu() {
                 }}
                 _hover={{ color: "black", fontWeight: "medium" }}
               >
-                <Text>Alphabetically</Text>
+                Alphabetically
               </TextTap>
               <TextTap
                 onClick={() => {
@@ -208,7 +207,7 @@ function SortMenu() {
                 }}
                 _hover={{ color: "black", fontWeight: "medium" }}
               >
-                <Text>Price: low to high</Text>
+                Price: low to high
               </TextTap>
               <TextTap
                 onClick={() => {
@@ -217,7 +216,7 @@ function SortMenu() {
                 }}
                 _hover={{ color: "black", fontWeight: "medium" }}
               >
-                <Text>Price: high to low</Text>
+                Price: high to low
               </TextTap>
               <TextTap
                 onClick={() => {
@@ -226,7 +225,7 @@ function SortMenu() {
                 }}
                 _hover={{ color: "black", fontWeight: "medium" }}
               >
-                <Text>Date: new to old</Text>
+                Date: new to old
               </TextTap>
               <TextTap
                 onClick={() => {
@@ -235,7 +234,7 @@ function SortMenu() {
                 }}
                 _hover={{ color: "black", fontWeight: "medium" }}
               >
-                <Text>Date: old to new</Text>
+                Date: old to new
               </TextTap>
             </MotionVStack>
           )}

@@ -1,11 +1,11 @@
 import { Grid, GridItem } from "@chakra-ui/react";
-import CategoryCard from "../CategoryCard";
+import CategoryCard from "./CategoryCard";
 
 function UpperGrid({ categories }) {
   return (
     <Grid
       w="full"
-      gap={4}
+      gap={8}
       templateColumns={{ base: "repeat(2, 1fr)", md: "repeat(4, 1fr)" }}
     >
       {categories.map((item, idx) => (

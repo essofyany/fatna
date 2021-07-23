@@ -4,7 +4,6 @@ const sortSlice = createSlice({
   name: "sortMenu",
   initialState: {
     current: "Featured",
-    // currentSort: "Featured",
   },
   reducers: {
     changeSort: (state, action) => {

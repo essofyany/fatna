@@ -14,7 +14,6 @@ import {
 } from "redux-persist";
 // import storage from "redux-persist/lib/storage";
 import createWebStorage from "redux-persist/lib/storage/createWebStorage";
-import interactionReducer from "./features/interactionSlice";
 import viewsReducer from "./features/viewsSlice";
 import categoryReducer from "./features/categorySlice";
 import currencyReducer from "./features/currencySlice";
@@ -41,7 +40,6 @@ const storage =
 
 const rootReducer = combineReducers({
   views: viewsReducer,
-  interactions: interactionReducer,
   category: categoryReducer,
   currency: currencyReducer,
   sortMenu: sortReducer,

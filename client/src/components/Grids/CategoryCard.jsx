@@ -31,8 +31,6 @@ function CategoryCard({ category, ...styles }) {
           objectFit="cover"
           objectPosition="center"
           alt={categoryName}
-          // layout="fill"
-          // placeholder="blur"
         />
 
         <MotionText

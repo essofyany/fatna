@@ -1,3 +1,5 @@
+import { useSelector } from "react-redux";
+import { useEffect } from "react";
 import {
   VStack,
   Accordion,
@@ -7,8 +9,6 @@ import {
 } from "@chakra-ui/react";
 import { MinusIcon, AddIcon } from "@chakra-ui/icons";
 import { USD, EUR, YEN, PND, RUP, currencySelector } from "./Currencies";
-import { useSelector } from "react-redux";
-import { useEffect } from "react";
 
 function CurrencyMenuAccordion() {
   const currentCurrency = useSelector((state) => state.currency.current);

@@ -2,7 +2,7 @@ import { Box, Text } from "@chakra-ui/react";
 import { RiHeart2Fill, RiHeart2Line } from "react-icons/ri";
 import { useSelector } from "react-redux";
 import IconTap from "../Motions/IconTap";
-import { currencySelector } from "../Materials/Currencies";
+import { currencySelector } from "../Currency/Currencies";
 
 function ProductInfo({ productInfo, setCardState, cardState }) {
   const { price, name } = productInfo;

@@ -11,15 +11,15 @@ import {
 } from "@chakra-ui/react";
 import ProductCard from "../../../components/ProductCard/ProductCard";
 import Banner from "../../../components/Materials/Banner";
-import Filter from "../../../components/Materials/Filter";
+import Filter from "../../../components/Filter/Filter";
 import SideMenu from "../../../components/Materials/SideMenu";
 import { WideView, MediumView, SmallView } from "../../../Icons/ViewIcons";
 import { BiFilterAlt } from "react-icons/bi";
-import DynamicGrid from "../../../components/Materials/DynamicGrid";
-import SortMenu from "../../../components/Materials/SortMenu";
+import DynamicGrid from "../../../components/Grids/DynamicGrid";
+import SortMenu from "../../../components/Filter/SortMenu";
 
 function ProductsList({ products }) {
-  console.log("products: ", products);
+  // console.log("products: ", products);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const filterBtnRef = useRef();
   const currentView = useBreakpointValue({

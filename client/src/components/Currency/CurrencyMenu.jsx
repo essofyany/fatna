@@ -1,15 +1,8 @@
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import { Box, VStack } from "@chakra-ui/react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useSelector } from "react-redux";
-import {
-  USD,
-  EUR,
-  PND,
-  RUP,
-  YEN,
-  currencySelector,
-} from "../Materials/Currencies";
+import { USD, EUR, PND, RUP, YEN, currencySelector } from "./Currencies";
 const MotionVStack = motion(VStack);
 
 function CurrencyMenu() {

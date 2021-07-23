@@ -6,7 +6,7 @@ import {
   useDisclosure,
   SlideFade,
 } from "@chakra-ui/react";
-import CurrencyMenu from "../Materials/CurrencyMenu";
+import CurrencyMenu from "../Currency/CurrencyMenu";
 import SocialIconsStack from "../Materials/SocialIconsStack";
 import { useInterval } from "../../hooks/useInterval";
 

@@ -3,12 +3,12 @@ import Head from "next/head";
 import { useDispatch } from "react-redux";
 import { Box, Center, Text } from "@chakra-ui/react";
 import { BsArrowRight } from "react-icons/bs";
-import SectionTitle from "../components/Home/SectionTitle";
-import SlideShow from "../components/Home/SlideShow";
 import Btn from "../components/Materials/Btn";
+import SlideShow from "../components/Materials/SlideShow";
 import Banner from "../components/Materials/Banner";
-import CategoryGrid from "../components/Home/CategoryGrid";
 import { getCategories } from "../features/categorySlice";
+import SectionTitle from "../components/Materials/SectionTitle";
+import CategoryGrid from "../components/Grids/CategoryGrid";
 
 const HomePage = ({ categories, products }) => {
   const dispatch = useDispatch();

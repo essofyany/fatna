@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Box, VStack, Text } from "@chakra-ui/react";
 import Slider from "rc-slider";
-import Btn from "./Btn";
+import Btn from "../Materials/Btn";
 
 const { createSliderWithTooltip } = Slider;
 const Range = createSliderWithTooltip(Slider.Range);

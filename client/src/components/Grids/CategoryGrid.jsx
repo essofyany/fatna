@@ -1,11 +1,11 @@
 import { VStack } from "@chakra-ui/react";
-import UpperGrid from "./categoryGrids/UpperGrid";
-import MiddleGrid from "./categoryGrids/MiddleGrid";
-import LowerGrid from "./categoryGrids/LowerGrid";
+import UpperGrid from "./UpperGrid";
+import MiddleGrid from "./MiddleGrid";
+import LowerGrid from "./LowerGrid";
 
 function CategoryGrid({ categories, banner1, banner2 }) {
   return (
-    <VStack my="5" w="full" spacing="7">
+    <VStack my="5" w="full" spacing="10">
       {/*  row 1 */}
       <UpperGrid categories={categories.slice(0, 4)} />
       {banner1}

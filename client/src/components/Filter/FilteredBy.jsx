@@ -1,5 +1,5 @@
 import { Box, VStack, Text, Input, Checkbox } from "@chakra-ui/react";
-import Btn from "./Btn";
+import Btn from "../Materials/Btn";
 
 function FilteredBy({ withBtn = true, filterByTitle, filterBy = "search" }) {
   return (
