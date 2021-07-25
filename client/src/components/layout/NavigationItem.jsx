@@ -1,11 +1,14 @@
 import { useState } from "react";
-import { Box } from "@chakra-ui/react";
+import { Box, useDisclosure } from "@chakra-ui/react";
 import TextTap from "../Motions/TextTap";
 import { motion } from "framer-motion";
+import HoverableNavMenu from "../Materials/HoverableNavMenu";
 
 const MotionBorder = motion(Box);
 
 function NavigationItem({ item, ...styles }) {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   const [hover, setHover] = useState(false);
 
   const variants = {
@@ -16,31 +19,44 @@ function NavigationItem({ item, ...styles }) {
     },
   };
   return (
-    <Box
-      w="auto"
-      onMouseOver={() => setHover(true)}
-      onMouseOut={() => setHover(false)}
-    >
-      <TextTap
-        cursor="pointer"
-        fontSize="md"
-        fontWeight="medium"
-        mx="2"
-        textTransform="uppercase"
-        {...styles}
+    <>
+      <Box
+        w="auto"
+        py="5"
+        onMouseOver={() => {
+          setHover(true);
+          onOpen();
+        }}
+        onMouseOut={() => {
+          setHover(false);
+          onClose();
+        }}
       >
+        <TextTap
+          cursor="pointer"
+          fontSize="lg"
+          fontWeight="medium"
+          mx="4"
+          textTransform="uppercase"
+          {...styles}
+        >
+          {item}
+        </TextTap>
+        <MotionBorder
+          initial="hidden"
+          animate={hover ? "visible" : "hidden"}
+          variants={variants}
+          w="full"
+          bg="black"
+          h="0.5"
+          borderRadius="lg"
+        />
+      </Box>
+      {/* TODO: add hoverable dropdown menu for navigation items */}
+      {/* <HoverableNavMenu isOpen={isOpen} onOpen={onOpen} onClose={onClose}>
         {item}
-      </TextTap>
-      <MotionBorder
-        initial="hidden"
-        animate={hover ? "visible" : "hidden"}
-        variants={variants}
-        w="full"
-        bg="black"
-        h="0.5"
-        borderRadius="lg"
-      />
-    </Box>
+      </HoverableNavMenu> */}
+    </>
   );
 }
 

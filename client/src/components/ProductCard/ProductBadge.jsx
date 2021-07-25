@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const MotionBadge = motion(Box);
 
-function ProductBadge({ badge, pos }) {
+function ProductBadge({ badge, pos = 0 }) {
   return (
     <MotionBadge
       initial={{ opacity: 0, x: 30 }}

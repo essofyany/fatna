@@ -1,13 +1,21 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useSelector } from "react-redux";
-import { Box, VStack } from "@chakra-ui/react";
+import { Box, VStack, useOutsideClick } from "@chakra-ui/react";
 import { motion, AnimatePresence } from "framer-motion";
 import { USD, EUR, PND, RUP, YEN, currencySelector } from "./Currencies";
+
 const MotionVStack = motion(VStack);
 
 function CurrencyMenu() {
   const currentCurrency = useSelector((state) => state.currency.current);
   const [isExpanded, setIsExpanded] = useState(false);
+  const menuRef = useRef();
+
+  useOutsideClick({
+    ref: menuRef,
+    handler: () => setIsExpanded(false),
+  });
+
   function handleClick() {
     setIsExpanded(!isExpanded);
   }
@@ -27,11 +35,9 @@ function CurrencyMenu() {
         cursor="pointer"
       >
         {currencySelector(currentCurrency).selectedComponent}
-        {/* {currentCurrency.selectedComponent} */}
-        {/* <USD selected={true} /> */}
       </Box>
       {/* currency menu */}
-      <Box pos="relative">
+      <Box pos="relative" ref={menuRef}>
         <AnimatePresence>
           {isExpanded && (
             <MotionVStack
